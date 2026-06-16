@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         Debug.Log("GAME OVER");
-        // UIManager.Instance.ShowGameOverScreen();
+        UIManager.Instance.ShowGameOverScreen();
     }
 
     void LevelWin()
@@ -54,6 +54,6 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         Debug.Log("YOU WIN");
-        // UIManager.Instance.ShowWinScreen();
+        UIManager.Instance.ShowWinScreen();
     }
 }
