@@ -21,12 +21,15 @@ public class GameManager : MonoBehaviour
         if (!isGameActive) return;
 
         timeRemaining -= Time.deltaTime;
-        UIManager.Instance.UpdateTimer(Mathf.CeilToInt(timeRemaining).ToString());
 
-        if (timeRemaining <= 0)
+        int currentSecond = Mathf.CeilToInt(timeRemaining);
+        if (currentSecond != lastDisplayedSecond)
         {
-            LevelWin();
+            lastDisplayedSecond = currentSecond;
+            UIManager.Instance.UpdateTimer(currentSecond.ToString());
         }
+
+        if (timeRemaining <= 0) LevelWin();
     }
 
     public void WrongPit()
@@ -40,8 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void CorrectPit(GameObject box)
     {
-        Debug.Log("Correct pit!");
-        Destroy(box); // replace with pooling later
+        BoxPool.Instance.ReturnBox(box);
     }
 
     void GameOver()

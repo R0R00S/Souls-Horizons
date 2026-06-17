@@ -4,7 +4,11 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    
+
     public static UIManager Instance;
+
+
 
     [Header("HUD Elements")]
     public TextMeshProUGUI timerText;
@@ -25,6 +29,7 @@ public class UIManager : MonoBehaviour
         if (gameOverScreen != null) gameOverScreen.SetActive(false);
         if (winScreen != null) winScreen.SetActive(false);
     }
+
 
     // Called by GameManager every Update frame
     public void UpdateTimer(string time)

@@ -205,13 +205,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156386447}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.46814796, y: 0.0066316207, z: -0.0035134852, w: 0.88361824}
+  m_LocalRotation: {x: 0.44619772, y: 0, z: 0, w: 0.89493436}
   m_LocalPosition: {x: -0.6840565, y: 5.2, z: -5.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 55.83, y: 0.86, z: 0}
+  m_LocalEulerAnglesHint: {x: 53, y: 0, z: 0}
 --- !u!114 &156386451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a74e656de5e86043ac10839e0b65965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentLevel: {fileID: 0}
   lives: 3
   timeRemaining: 60
   isGameActive: 1
@@ -987,6 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PitTarget
   pitType: 0
+  pitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &906962294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1718,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoxDraggable
   boxType: 0
   dragParticles: {fileID: 0}
+  isBeingHeld: 0
+  pitColors: []
 --- !u!1 &1804673719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PitTarget
   pitType: 0
+  pitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1895047129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1881,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoxDraggable
   boxType: 1
   dragParticles: {fileID: 0}
+  isBeingHeld: 0
+  pitColors: []
 --- !u!65 &1895047131
 BoxCollider:
   m_ObjectHideFlags: 0
