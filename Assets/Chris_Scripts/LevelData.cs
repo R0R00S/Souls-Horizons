@@ -7,4 +7,5 @@ public class LevelData : ScriptableObject
     public float levelDuration = 60f;
     public float spawnInterval = 3f;
     public float beltSpeed = 2f;
+    public int maxSimultaneousBoxes = 1;
 }

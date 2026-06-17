@@ -4,12 +4,9 @@ using System.Collections;
 public class BoxDraggable : MonoBehaviour
 {
     public int boxType;
-    public ParticleSystem dragParticles;
+    public Color[] pitColors;
 
     public bool isBeingHeld = false;
-
-    // Add one color per pit in the Inspector — Unity will show a resizable array
-    public Color[] pitColors;
 
     private Renderer boxRenderer;
     private PitTarget currentOverlappingPit = null;
@@ -21,40 +18,29 @@ public class BoxDraggable : MonoBehaviour
         boxRenderer = GetComponent<Renderer>();
     }
 
-    void Start()
+    void OnEnable()
     {
+        // Reset state every time box is pulled from the pool
+        isBeingHeld = false;
+        isFlashing = false;
+        currentOverlappingPit = null;
         spawnPosition = transform.position;
     }
 
-    // Called by spawner after setting boxType
     public void UpdateVisual()
     {
         if (pitColors != null && boxType < pitColors.Length)
             boxRenderer.material.color = pitColors[boxType];
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        PitTarget pit = other.GetComponent<PitTarget>();
-        if (pit != null) currentOverlappingPit = pit;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        PitTarget pit = other.GetComponent<PitTarget>();
-        if (pit == currentOverlappingPit) currentOverlappingPit = null;
-    }
-
     public void OnPickUp()
     {
         isBeingHeld = true;
-        if (dragParticles != null) dragParticles.Play();
     }
 
     public void OnRelease()
     {
         isBeingHeld = false;
-        if (dragParticles != null) dragParticles.Stop();
 
         if (currentOverlappingPit != null)
         {
@@ -65,6 +51,7 @@ public class BoxDraggable : MonoBehaviour
         }
         else
         {
+            // Dropped in empty space — snap back to belt position
             transform.position = spawnPosition;
         }
     }
@@ -90,4 +77,15 @@ public class BoxDraggable : MonoBehaviour
         isFlashing = false;
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        PitTarget pit = other.GetComponent<PitTarget>();
+        if (pit != null) currentOverlappingPit = pit;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        PitTarget pit = other.GetComponent<PitTarget>();
+        if (pit == currentOverlappingPit) currentOverlappingPit = null;
+    }
 }

@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BoxPool : MonoBehaviour
 {
@@ -14,7 +14,6 @@ public class BoxPool : MonoBehaviour
     {
         Instance = this;
 
-        // Pre-create all boxes at startup, then hide them
         for (int i = 0; i < poolSize; i++)
         {
             GameObject box = Instantiate(boxPrefab);
@@ -25,7 +24,11 @@ public class BoxPool : MonoBehaviour
 
     public GameObject GetBox(Vector3 position)
     {
-        if (pool.Count == 0) return null; // pool exhausted
+        if (pool.Count == 0)
+        {
+            Debug.LogWarning("Pool exhausted — increase pool size");
+            return null;
+        }
 
         GameObject box = pool.Dequeue();
         box.transform.position = position;

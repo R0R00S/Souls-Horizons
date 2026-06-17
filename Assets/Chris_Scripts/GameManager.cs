@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; // lets other scripts call GameManager.Instance.WrongPit()
+    public static GameManager Instance;
+
     public LevelData currentLevel;
 
     public int lives = 3;
     public float timeRemaining;
     public bool isGameActive = true;
+
     private int lastDisplayedSecond = -1;
 
     void Awake()
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
 
         timeRemaining -= Time.deltaTime;
 
+        // Only update UI once per second to avoid string allocation every frame
         int currentSecond = Mathf.CeilToInt(timeRemaining);
         if (currentSecond != lastDisplayedSecond)
         {
@@ -29,20 +32,24 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.UpdateTimer(currentSecond.ToString());
         }
 
-        if (timeRemaining <= 0) LevelWin();
+        if (timeRemaining <= 0f)
+            LevelWin();
     }
 
     public void WrongPit()
     {
         lives--;
         UIManager.Instance.UpdateLives(lives);
-        Debug.Log("Wrong pit! Lives left: " + lives);
+        Debug.Log("Wrong pit! Lives remaining: " + lives);
 
-        if (lives <= 0) GameOver();
+        if (lives <= 0)
+            GameOver();
     }
 
     public void CorrectPit(GameObject box)
     {
+        Debug.Log("Correct pit!");
+        BoxSpawner.Instance.BoxSorted();
         BoxPool.Instance.ReturnBox(box);
     }
 
@@ -50,15 +57,25 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         Time.timeScale = 0;
-        Debug.Log("GAME OVER");
+        BoxSpawner.Instance.StopSpawning();
         UIManager.Instance.ShowGameOverScreen();
+        Debug.Log("GAME OVER");
     }
 
     void LevelWin()
     {
         isGameActive = false;
         Time.timeScale = 0;
-        Debug.Log("YOU WIN");
+        BoxSpawner.Instance.StopSpawning();
         UIManager.Instance.ShowWinScreen();
+        Debug.Log("LEVEL WIN");
+    }
+
+    public void Retry()
+    {
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+        );
     }
 }
