@@ -3,14 +3,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // lets other scripts call GameManager.Instance.WrongPit()
+    public LevelData currentLevel;
 
     public int lives = 3;
-    public float timeRemaining = 60f;
+    public float timeRemaining;
     public bool isGameActive = true;
+    private int lastDisplayedSecond = -1;
 
     void Awake()
     {
-        Instance = this; // set up the singleton
+        Instance = this;
+        timeRemaining = currentLevel.levelDuration;
     }
 
     void Update()

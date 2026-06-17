@@ -9,6 +9,16 @@ public class InputManager : MonoBehaviour
     // This is the flat plane the box slides along while being dragged
     private Plane dragPlane;
 
+    private Camera cam;
+
+    void Start()
+    {
+        cam = Camera.main;
+    }
+
+    
+
+
     void Update()
     {
         if (!GameManager.Instance.isGameActive) return;
@@ -29,7 +39,7 @@ public class InputManager : MonoBehaviour
 
     void TryGrabBox()
     {
-        Ray ray = Camera.main.ScreenPointToRay(GetInputPosition());
+        Ray ray = cam.ScreenPointToRay(GetInputPosition());
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             if (hit.collider.CompareTag("Box"))
@@ -54,7 +64,7 @@ public class InputManager : MonoBehaviour
 
     void DragBox()
     {
-        Ray ray = Camera.main.ScreenPointToRay(GetInputPosition());
+        Ray ray = cam.ScreenPointToRay(GetInputPosition());
         if (dragPlane.Raycast(ray, out float dist))
         {
             Vector3 targetPos = ray.GetPoint(dist) + dragOffset;
