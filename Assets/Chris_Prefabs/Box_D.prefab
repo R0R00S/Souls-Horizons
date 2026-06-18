@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8837394293086331135}
   - component: {fileID: 253029228680956207}
   m_Layer: 0
-  m_Name: Box
+  m_Name: Box_D
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e6539d2f75e994c4393795ca492944fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,8 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088830c19195a4944872229a1e5dada4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoxDraggable
-  boxType: 0
-  pitColors:
-  - {r: 0, g: 0.52419114, b: 1, a: 0}
-  - {r: 1, g: 0.038993105, b: 0, a: 0}
+  boxType: 4
   isBeingHeld: 0

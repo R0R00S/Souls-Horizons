@@ -7,7 +7,6 @@ public class BoxSpawner : MonoBehaviour
 
     [Header("Belt")]
     public Transform spawnPoint;
-    public Transform beltEndPoint;
 
     private int activeBoxCount = 0;
     private float spawnTimer;
@@ -21,7 +20,7 @@ public class BoxSpawner : MonoBehaviour
 
     void Start()
     {
-        spawnTimer = GameManager.Instance.currentLevel.spawnInterval;
+        spawnTimer = GameManager.Instance.currentLevel.minSpawnInterval;
         currentBeltSpeed = GameManager.Instance.currentLevel.beltSpeed;
     }
 
@@ -29,7 +28,6 @@ public class BoxSpawner : MonoBehaviour
     {
         if (!GameManager.Instance.isGameActive || isStopped) return;
 
-        // Belt speeds up in the last 20 seconds
         float urgencyMultiplier = GameManager.Instance.timeRemaining < 20f ? 1.5f : 1f;
         currentBeltSpeed = GameManager.Instance.currentLevel.beltSpeed * urgencyMultiplier;
 
@@ -39,58 +37,79 @@ public class BoxSpawner : MonoBehaviour
             if (spawnTimer <= 0f)
             {
                 SpawnBox();
-                spawnTimer = GameManager.Instance.currentLevel.spawnInterval;
+                spawnTimer = Random.Range(
+                    GameManager.Instance.currentLevel.minSpawnInterval,
+                    GameManager.Instance.currentLevel.maxSpawnInterval
+                );
             }
         }
     }
 
     void SpawnBox()
     {
-        // Stagger positions so multiple boxes don't overlap
         Vector3 spawnPos = spawnPoint.position;
         spawnPos.x += activeBoxCount * 1.2f;
 
-        GameObject box = BoxPool.Instance.GetBox(spawnPos);
-        if (box == null) return;
+        // Pick a type first, then fetch the matching prefab from the pool
+        BoxType chosenType = PickBoxType();
 
-        int randomType = Random.Range(0, GameManager.Instance.currentLevel.numberOfPits);
-        BoxDraggable draggable = box.GetComponent<BoxDraggable>();
-        draggable.boxType = randomType;
-        draggable.UpdateVisual();
+        GameObject box = BoxPool.Instance.GetBox(chosenType, spawnPos);
+        if (box == null) return;
 
         activeBoxCount++;
         StartCoroutine(MoveAlongBelt(box));
 
-        Debug.Log("Spawned box type: " + randomType);
+        Debug.Log("Spawned box type: " + chosenType);
+    }
+
+    BoxType PickBoxType()
+    {
+        LevelData lvl = GameManager.Instance.currentLevel;
+
+        int total = lvl.noneChance + lvl.typeAChance + lvl.typeBChance
+                  + lvl.typeCChance + lvl.typeDChance;
+
+        if (total == 0) return BoxType.None;
+
+        int roll = Random.Range(0, total);
+
+        if (roll < lvl.noneChance) return BoxType.None;
+        roll -= lvl.noneChance;
+
+        if (roll < lvl.typeAChance) return BoxType.TypeA;
+        roll -= lvl.typeAChance;
+
+        if (roll < lvl.typeBChance) return BoxType.TypeB;
+        roll -= lvl.typeBChance;
+
+        if (roll < lvl.typeCChance) return BoxType.TypeC;
+
+        return BoxType.TypeD;
     }
 
     IEnumerator MoveAlongBelt(GameObject box)
     {
+        GateTarget gate = FindObjectOfType<GateTarget>();
+
         while (box != null && box.activeSelf)
         {
             BoxDraggable draggable = box.GetComponent<BoxDraggable>();
 
-            if (!draggable.isBeingHeld)
+            if (!draggable.isBeingHeld && gate != null)
             {
                 box.transform.position = Vector3.MoveTowards(
                     box.transform.position,
-                    beltEndPoint.position,
+                    gate.transform.position,
                     currentBeltSpeed * Time.deltaTime
                 );
 
                 float distanceLeft = Vector3.Distance(
                     box.transform.position,
-                    beltEndPoint.position
+                    gate.transform.position
                 );
 
                 if (distanceLeft < 1.5f)
                     draggable.FlashWarning();
-
-                if (distanceLeft < 0.1f)
-                {
-                    ReturnBoxToBelt(box);
-                    yield break;
-                }
             }
 
             yield return null;

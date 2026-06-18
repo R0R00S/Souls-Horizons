@@ -5,32 +5,43 @@ public class BoxPool : MonoBehaviour
 {
     public static BoxPool Instance;
 
-    public GameObject boxPrefab;
-    public int poolSize = 10;
+    [Header("One prefab per box type — assign in Inspector")]
+    public GameObject[] boxPrefabs; // slot 0 = None, 1 = TypeA, 2 = TypeB etc.
+    public int poolSizePerType = 5;
 
-    private Queue<GameObject> pool = new Queue<GameObject>();
+    // Separate queue per prefab type
+    private Dictionary<BoxType, Queue<GameObject>> pools
+        = new Dictionary<BoxType, Queue<GameObject>>();
 
     void Awake()
     {
         Instance = this;
 
-        for (int i = 0; i < poolSize; i++)
+        foreach (GameObject prefab in boxPrefabs)
         {
-            GameObject box = Instantiate(boxPrefab);
-            box.SetActive(false);
-            pool.Enqueue(box);
+            BoxType type = prefab.GetComponent<BoxDraggable>().boxType;
+
+            if (!pools.ContainsKey(type))
+                pools[type] = new Queue<GameObject>();
+
+            for (int i = 0; i < poolSizePerType; i++)
+            {
+                GameObject box = Instantiate(prefab);
+                box.SetActive(false);
+                pools[type].Enqueue(box);
+            }
         }
     }
 
-    public GameObject GetBox(Vector3 position)
+    public GameObject GetBox(BoxType type, Vector3 position)
     {
-        if (pool.Count == 0)
+        if (!pools.ContainsKey(type) || pools[type].Count == 0)
         {
-            Debug.LogWarning("Pool exhausted — increase pool size");
+            Debug.LogWarning("Pool empty for type: " + type);
             return null;
         }
 
-        GameObject box = pool.Dequeue();
+        GameObject box = pools[type].Dequeue();
         box.transform.position = position;
         box.SetActive(true);
         return box;
@@ -38,7 +49,10 @@ public class BoxPool : MonoBehaviour
 
     public void ReturnBox(GameObject box)
     {
+        BoxType type = box.GetComponent<BoxDraggable>().boxType;
         box.SetActive(false);
-        pool.Enqueue(box);
+
+        if (pools.ContainsKey(type))
+            pools[type].Enqueue(box);
     }
 }

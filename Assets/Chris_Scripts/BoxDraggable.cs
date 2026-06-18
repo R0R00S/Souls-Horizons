@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BoxDraggable : MonoBehaviour
 {
-    public int boxType;
-    public Color[] pitColors;
+    [Header("Box Identity")]
+    public BoxType boxType; // set once on the prefab, never changed at runtime
 
     public bool isBeingHeld = false;
 
@@ -20,17 +20,10 @@ public class BoxDraggable : MonoBehaviour
 
     void OnEnable()
     {
-        // Reset state every time box is pulled from the pool
         isBeingHeld = false;
         isFlashing = false;
         currentOverlappingPit = null;
         spawnPosition = transform.position;
-    }
-
-    public void UpdateVisual()
-    {
-        if (pitColors != null && boxType < pitColors.Length)
-            boxRenderer.material.color = pitColors[boxType];
     }
 
     public void OnPickUp()
@@ -44,14 +37,13 @@ public class BoxDraggable : MonoBehaviour
 
         if (currentOverlappingPit != null)
         {
-            if (currentOverlappingPit.pitType == boxType)
+            if (currentOverlappingPit.acceptedBoxType == boxType)
                 GameManager.Instance.CorrectPit(gameObject);
             else
                 GameManager.Instance.WrongPit();
         }
         else
         {
-            // Dropped in empty space — snap back to belt position
             transform.position = spawnPosition;
         }
     }
