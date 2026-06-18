@@ -38,14 +38,19 @@ public class BoxDraggable : MonoBehaviour
         if (currentOverlappingPit != null)
         {
             if (currentOverlappingPit.acceptedBoxType == boxType)
+            {
+                // Correct pit — return to pool
                 GameManager.Instance.CorrectPit(gameObject);
+            }
             else
+            {
+                // Wrong pit — penalise and return to pool immediately
                 GameManager.Instance.WrongPit();
+                BoxSpawner.Instance.BoxSorted();
+                BoxPool.Instance.ReturnBox(gameObject);
+            }
         }
-        else
-        {
-            transform.position = spawnPosition;
-        }
+        // Empty space drop — do nothing, coroutine resumes from current position
     }
 
     public void FlashWarning()

@@ -2,27 +2,26 @@ using UnityEngine;
 
 public class GateTarget : MonoBehaviour
 {
-    // Boxes of type None are safe to enter — everything else costs a life
     void OnTriggerEnter(Collider other)
     {
+        // Only care about objects with BoxDraggable on them
         BoxDraggable box = other.GetComponent<BoxDraggable>();
         if (box == null) return;
-        if (box.isBeingHeld) return; // player is still dragging it, ignore
+
+        // Ignore boxes the player is currently holding
+        if (box.isBeingHeld) return;
 
         if (box.boxType == BoxType.None)
         {
-            // Safe box reached the gate — correct outcome, no penalty
-            Debug.Log("Safe box passed through the gate correctly.");
+            Debug.Log("Safe box passed through gate correctly.");
             GameManager.Instance.CorrectPit(other.gameObject);
         }
         else
         {
-            // Wrong box slipped through — player was too slow
-            Debug.Log($"Wrong box ({box.boxType}) reached the gate! Lose a life.");
+            Debug.Log($"Wrong box ({box.boxType}) reached the gate — lose a life.");
             GameManager.Instance.WrongPit();
             BoxPool.Instance.ReturnBox(other.gameObject);
+            BoxSpawner.Instance.BoxSorted();
         }
-
-        BoxSpawner.Instance.BoxSorted();
     }
 }

@@ -48,11 +48,10 @@ public class GameManager : MonoBehaviour
 
     public void CorrectPit(GameObject box)
     {
-        Debug.Log("Correct pit!");
+        Debug.Log("Correct!");
         BoxSpawner.Instance.BoxSorted();
         BoxPool.Instance.ReturnBox(box);
     }
-
     void GameOver()
     {
         isGameActive = false;
