@@ -23,7 +23,12 @@ public class LevelData : ScriptableObject
     [Header("Flame Settings")]
     public float flameMinSpawnInterval = 4f;
     public float flameMaxSpawnInterval = 10f;
-    public float flameGrowthDuration = 8f;   // time to go from spawn to explosion
-    public float flameExtinguishHoldTime = 1.5f; // how long player must hold to put it out
     public int maxActiveFlames = 2;
+
+    [Header("Flame Size Settings")]
+    public float flameStartSize = 4f;
+    public float flameExplodeSize = 10f;
+    public float flameExtinguishSize = 0.5f;
+    public float flameGrowthRate = 0.5f;      // size increase per second when left alone
+    public float flameShrinkRate = 2f;        // size decrease per second when held
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Chris_Box
   - Box
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Floor
+  - Effects
   - 
   - 
   - 
@@ -42,6 +43,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 751541705
+    locked: 0
+  - name: Effects
+    uniqueID: 2464276219
     locked: 0
   m_RenderingLayers:
   - Default

@@ -54,13 +54,19 @@ public class FlameSpawner : MonoBehaviour
     void TrySpawnFlame()
     {
         Vector3 candidate = GetValidSpawnPosition();
-        if (candidate == Vector3.zero) return; // failed to find a spot, skip this cycle
+        if (candidate == Vector3.zero) return;
 
         GameObject flame = Instantiate(flamePrefab, candidate, Quaternion.identity);
         FlameController controller = flame.GetComponent<FlameController>();
 
         LevelData lvl = GameManager.Instance.currentLevel;
-        controller.Initialize(lvl.flameGrowthDuration, lvl.flameExtinguishHoldTime);
+        controller.Initialize(
+            lvl.flameStartSize,
+            lvl.flameExplodeSize,
+            lvl.flameExtinguishSize,
+            lvl.flameGrowthRate,
+            lvl.flameShrinkRate
+        );
 
         activeFlames.Add(flame);
         Debug.Log("Flame spawned at " + candidate);
@@ -87,8 +93,22 @@ public class FlameSpawner : MonoBehaviour
     {
         foreach (Transform zone in noSpawnZones)
         {
-            if (Vector3.Distance(position, zone.position) < noSpawnRadius)
-                return false;
+            Collider col = zone.GetComponent<Collider>();
+
+            if (col != null)
+            {
+                // Use the real bounding box of the object, expanded by a small buffer
+                Bounds bounds = col.bounds;
+                bounds.Expand(noSpawnRadius); // grows the box outward in all directions
+                if (bounds.Contains(position))
+                    return false;
+            }
+            else
+            {
+                // Fallback to simple distance check if no collider exists
+                if (Vector3.Distance(position, zone.position) < noSpawnRadius)
+                    return false;
+            }
         }
         return true;
     }

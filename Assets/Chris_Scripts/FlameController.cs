@@ -3,23 +3,29 @@ using UnityEngine;
 public class FlameController : MonoBehaviour
 {
     [Header("Visual")]
-    public Transform spriteVisual; // the 2D flame sprite child object
-    public Vector3 minScale = new Vector3(0.3f, 0.3f, 0.3f);
-    public Vector3 maxScale = new Vector3(1.2f, 1.2f, 1.2f);
+    public Transform spriteVisual;
 
-    private float growthDuration;
-    private float extinguishHoldTime;
-    private float currentGrowth = 0f;   // 0 = just spawned, 1 = about to explode
-    private float extinguishProgress = 0f; // 0 = untouched, 1 = fully extinguished
+    // Size-to-scale conversion — adjust this multiplier to match your sprite's natural size
+    public float visualScaleMultiplier = 0.15f;
+
+    private float explodeSize;
+    private float extinguishSize;
+    private float growthRate;
+    private float shrinkRate;
+
+    private float currentSize;
     private bool isBeingExtinguished = false;
     private bool isExploded = false;
 
-    public void Initialize(float growDuration, float extinguishTime)
+    public void Initialize(float startSize, float explodeAt, float extinguishAt,
+                            float growRate, float shrinkRatePerSec)
     {
-        growthDuration = growDuration;
-        extinguishHoldTime = extinguishTime;
-        currentGrowth = 0f;
-        extinguishProgress = 0f;
+        currentSize = startSize;
+        explodeSize = explodeAt;
+        extinguishSize = extinguishAt;
+        growthRate = growRate;
+        shrinkRate = shrinkRatePerSec;
+
         isBeingExtinguished = false;
         isExploded = false;
         UpdateVisualScale();
@@ -31,11 +37,9 @@ public class FlameController : MonoBehaviour
 
         if (isBeingExtinguished)
         {
-            // Holding press — shrink back down
-            extinguishProgress += Time.deltaTime / extinguishHoldTime;
-            currentGrowth = Mathf.Max(0f, currentGrowth - (Time.deltaTime / extinguishHoldTime));
+            currentSize -= shrinkRate * Time.deltaTime;
 
-            if (extinguishProgress >= 1f)
+            if (currentSize <= extinguishSize)
             {
                 Extinguish();
                 return;
@@ -43,10 +47,9 @@ public class FlameController : MonoBehaviour
         }
         else
         {
-            // Left alone — keep growing
-            currentGrowth += Time.deltaTime / growthDuration;
+            currentSize += growthRate * Time.deltaTime;
 
-            if (currentGrowth >= 1f)
+            if (currentSize >= explodeSize)
             {
                 Explode();
                 return;
@@ -59,34 +62,34 @@ public class FlameController : MonoBehaviour
     void UpdateVisualScale()
     {
         if (spriteVisual != null)
-            spriteVisual.localScale = Vector3.Lerp(minScale, maxScale, currentGrowth);
+        {
+            float scale = currentSize * visualScaleMultiplier;
+            spriteVisual.localScale = new Vector3(scale, scale, scale);
+        }
     }
 
-    // Called by FlameInputHandler while the player holds their finger on this flame
     public void StartExtinguishing()
     {
         isBeingExtinguished = true;
     }
 
-    // Called when the player lifts their finger before fully extinguishing
     public void StopExtinguishing()
     {
         isBeingExtinguished = false;
-        // Alternative — decays gradually instead of resetting to 0
-        extinguishProgress = Mathf.Max(0f, extinguishProgress - Time.deltaTime * 0.5f);
+        // No reset needed — size just stays where it is and resumes growing from there
     }
 
     void Extinguish()
     {
-        Debug.Log("Flame extinguished");
+        Debug.Log("Flame extinguished at size " + currentSize);
         FlameSpawner.Instance.FlameRemoved(gameObject);
     }
 
     void Explode()
     {
         isExploded = true;
-        Debug.Log("Flame exploded! Lose a life.");
-        GameManager.Instance.WrongPit(); // reuses existing life-loss logic
+        Debug.Log("Flame exploded at size " + currentSize);
+        GameManager.Instance.WrongPit();
         FlameSpawner.Instance.FlameRemoved(gameObject);
     }
 }
