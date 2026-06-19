@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
+        FlameSpawner.Instance.StopSpawning();
         UIManager.Instance.ShowGameOverScreen();
         Debug.Log("GAME OVER");
     }
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
+        FlameSpawner.Instance.StopSpawning();
         UIManager.Instance.ShowWinScreen();
         Debug.Log("LEVEL WIN");
     }

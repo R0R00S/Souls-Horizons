@@ -19,4 +19,11 @@ public class LevelData : ScriptableObject
     [Range(0, 100)] public int typeBChance = 40;
     [Range(0, 100)] public int typeCChance = 0;
     [Range(0, 100)] public int typeDChance = 0;
+
+    [Header("Flame Settings")]
+    public float flameMinSpawnInterval = 4f;
+    public float flameMaxSpawnInterval = 10f;
+    public float flameGrowthDuration = 8f;   // time to go from spawn to explosion
+    public float flameExtinguishHoldTime = 1.5f; // how long player must hold to put it out
+    public int maxActiveFlames = 2;
 }
