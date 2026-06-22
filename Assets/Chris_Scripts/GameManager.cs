@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public int lives = 3;
     public float timeRemaining;
+    public float timeElapsed = 0f;
+
     public bool isGameActive = true;
 
     private int lastDisplayedSecond = -1;
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
         if (!isGameActive) return;
 
         timeRemaining -= Time.deltaTime;
+        timeElapsed += Time.deltaTime;
 
         // Only update UI once per second to avoid string allocation every frame
         int currentSecond = Mathf.CeilToInt(timeRemaining);

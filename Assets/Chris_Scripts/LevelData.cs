@@ -31,4 +31,9 @@ public class LevelData : ScriptableObject
     public float flameExtinguishSize = 0.5f;
     public float flameGrowthRate = 0.5f;      // size increase per second when left alone
     public float flameShrinkRate = 2f;        // size decrease per second when held
+
+    [Header("Pit Spawner Settings")]
+    public float pitSpawnActivationTime = 30f;  // seconds into the level before pit spawning begins
+    public float pitMinSpawnInterval = 5f;       // slower than the belt by default
+    public float pitMaxSpawnInterval = 12f;
 }

@@ -133,4 +133,16 @@ public class BoxSpawner : MonoBehaviour
         StopAllCoroutines();
         activeBoxCount = 0;
     }
+
+    // Lets PitSpawner register souls it spawned into the shared active count
+    public void RegisterExternalSoul()
+    {
+        activeBoxCount++;
+    }
+
+    // Lets PitSpawner read the live belt speed including urgency multiplier
+    public float GetCurrentBeltSpeed()
+    {
+        return currentBeltSpeed;
+    }
 }
