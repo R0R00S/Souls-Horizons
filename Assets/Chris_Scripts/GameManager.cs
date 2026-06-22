@@ -61,8 +61,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
         FlameSpawner.Instance.StopSpawning();
+
+        // Stop all pit spawners
+        foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
+            ps.StopSpawning();
+
         UIManager.Instance.ShowGameOverScreen();
-        Debug.Log("GAME OVER");
     }
 
     void LevelWin()
@@ -71,8 +75,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
         FlameSpawner.Instance.StopSpawning();
+
+        foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
+            ps.StopSpawning();
+
         UIManager.Instance.ShowWinScreen();
-        Debug.Log("LEVEL WIN");
     }
 
     public void Retry()
