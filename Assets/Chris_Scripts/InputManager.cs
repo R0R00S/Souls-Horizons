@@ -7,12 +7,13 @@ public class InputManager : MonoBehaviour
     private Vector3 dragOffset;
     private Plane dragPlane;
 
-    private float dragHeight = 1.5f;  // height box floats while held
-    private float liftHeight = 0.6f;  // extra lift so finger doesn't cover box
+    // Drag plane height — set this to match your floor's Y position
+    // No separate liftHeight needed anymore, animation handles visual displacement
+    private float dragPlaneHeight = 1.2f;
 
     void Start()
     {
-        cam = Camera.main; // cached once — not called every frame
+        cam = Camera.main;
     }
 
     void Update()
@@ -38,10 +39,9 @@ public class InputManager : MonoBehaviour
             {
                 heldBox = hit.collider.gameObject;
 
-                // Drag plane sits at the float height
-                dragPlane = new Plane(Vector3.up, new Vector3(0, dragHeight, 0));
+                // Drag plane at floor level — box collider stays here
+                dragPlane = new Plane(Vector3.up, new Vector3(0, dragPlaneHeight, 0));
 
-                // Offset so box doesn't snap to finger position
                 if (dragPlane.Raycast(ray, out float dist))
                 {
                     dragOffset = heldBox.transform.position - ray.GetPoint(dist);
@@ -61,11 +61,9 @@ public class InputManager : MonoBehaviour
         if (dragPlane.Raycast(ray, out float dist))
         {
             Vector3 targetPos = ray.GetPoint(dist) + dragOffset;
+            targetPos.y = dragPlaneHeight;
 
-            // Lift box above finger so it stays visible on mobile
-            targetPos.y = dragHeight + liftHeight;
-
-            // Smooth movement instead of instant teleport
+            // Smooth follow
             heldBox.transform.position = Vector3.Lerp(
                 heldBox.transform.position,
                 targetPos,
@@ -78,22 +76,18 @@ public class InputManager : MonoBehaviour
     {
         heldBox.GetComponent<BoxDraggable>().OnRelease();
         heldBox = null;
-        Debug.Log("Released box");
     }
 
-    // --- Input helpers: resolve touch vs mouse once per frame ---
-
+    // --- input helpers unchanged ---
     Vector3 GetInputPosition()
     {
-        if (Input.touchCount > 0)
-            return Input.GetTouch(0).position;
+        if (Input.touchCount > 0) return Input.GetTouch(0).position;
         return Input.mousePosition;
     }
 
     bool GetPressedThisFrame()
     {
-        if (Input.touchCount > 0)
-            return Input.GetTouch(0).phase == TouchPhase.Began;
+        if (Input.touchCount > 0) return Input.GetTouch(0).phase == TouchPhase.Began;
         return Input.GetMouseButtonDown(0);
     }
 
@@ -107,8 +101,7 @@ public class InputManager : MonoBehaviour
 
     bool GetReleasedThisFrame()
     {
-        if (Input.touchCount > 0)
-            return Input.GetTouch(0).phase == TouchPhase.Ended;
+        if (Input.touchCount > 0) return Input.GetTouch(0).phase == TouchPhase.Ended;
         return Input.GetMouseButtonUp(0);
     }
 }

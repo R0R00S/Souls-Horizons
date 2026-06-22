@@ -12,22 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4256901e2d2a45748984f0306bad14b3, type: 3}
   m_Name: Level_01
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelDuration: 60
+  levelDuration: 30
   beltSpeed: 2
   minSpawnInterval: 0.7
   maxSpawnInterval: 2.86
   maxSimultaneousBoxes: 20
   numberOfPits: 4
-  noneChance: 0
+  noneChance: 10
   typeAChance: 0
   typeBChance: 0
   typeCChance: 0
   typeDChance: 0
-  flameMinSpawnInterval: 3
-  flameMaxSpawnInterval: 5
-  maxActiveFlames: 2
+  flameMinSpawnInterval: 0
+  flameMaxSpawnInterval: 0
+  maxActiveFlames: 0
   flameStartSize: 7
   flameExplodeSize: 13
   flameExtinguishSize: 1.5
   flameGrowthRate: 0.5
   flameShrinkRate: 2
+  pitSpawnActivationTime: 7.65
+  pitMinSpawnInterval: 3.73
+  pitMaxSpawnInterval: 6.46

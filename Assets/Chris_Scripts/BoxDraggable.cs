@@ -4,53 +4,83 @@ using System.Collections;
 public class BoxDraggable : MonoBehaviour
 {
     [Header("Box Identity")]
-    public BoxType boxType; // set once on the prefab, never changed at runtime
+    public BoxType boxType;
+
+    [Header("References")]
+    public Animator visualAnimator; // drag the Visual child's Animator here in Inspector
 
     public bool isBeingHeld = false;
 
     private Renderer boxRenderer;
-    private PitTarget currentOverlappingPit = null;
-    private Vector3 spawnPosition;
     private bool isFlashing = false;
 
     void Awake()
     {
-        boxRenderer = GetComponent<Renderer>();
+        // Renderer is now on the Visual child — find it there
+        boxRenderer = GetComponentInChildren<Renderer>();
     }
 
     void OnEnable()
     {
         isBeingHeld = false;
         isFlashing = false;
-        currentOverlappingPit = null;
-        spawnPosition = transform.position;
+
+        // Make sure animation resets to idle when pulled from pool
+        if (visualAnimator != null)
+            visualAnimator.SetBool("IsHeld", false);
     }
 
     public void OnPickUp()
     {
         isBeingHeld = true;
+
+        if (visualAnimator != null)
+        {
+            visualAnimator.SetBool("IsHeld", true);
+            Debug.Log("IsHeld set to true, animator state: " + visualAnimator.GetCurrentAnimatorStateInfo(0).IsName("BoxPickedUp"));
+        }
+        else
+        {
+            Debug.LogError("visualAnimator is null on " + gameObject.name);
+        }
     }
 
     public void OnRelease()
     {
         isBeingHeld = false;
 
-        if (currentOverlappingPit != null)
+        if (visualAnimator != null)
+            visualAnimator.SetBool("IsHeld", false);
+
+        PitTarget pitHit = GetOverlappingPit();
+
+        if (pitHit != null)
         {
-            if (currentOverlappingPit.acceptedBoxType == boxType)
+            if (pitHit.acceptedBoxType == boxType)
             {
-                // Correct pit — return to pool
                 GameManager.Instance.CorrectPit(gameObject);
             }
             else
             {
-                // Wrong pit — penalise and return to pool immediately
                 GameManager.Instance.WrongPit();
                 BoxSpawner.Instance.BoxSorted();
                 BoxPool.Instance.ReturnBox(gameObject);
             }
         }
-        // Empty space drop — do nothing, coroutine resumes from current position
+        // No pit hit — coroutine resumes from current position toward gate
+    }
+
+    PitTarget GetOverlappingPit()
+    {
+        Collider[] nearby = Physics.OverlapSphere(transform.position, 0.6f);
+
+        foreach (Collider col in nearby)
+        {
+            PitTarget pit = col.GetComponent<PitTarget>();
+            if (pit != null) return pit;
+        }
+
+        return null;
     }
 
     public void FlashWarning()
@@ -74,15 +104,14 @@ public class BoxDraggable : MonoBehaviour
         isFlashing = false;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnDrawGizmos()
     {
-        PitTarget pit = other.GetComponent<PitTarget>();
-        if (pit != null) currentOverlappingPit = pit;
+        if (isBeingHeld)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, 0.6f);
+        }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        PitTarget pit = other.GetComponent<PitTarget>();
-        if (pit == currentOverlappingPit) currentOverlappingPit = null;
-    }
+
 }
