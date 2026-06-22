@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
 
     // Drag plane height — set this to match your floor's Y position
     // No separate liftHeight needed anymore, animation handles visual displacement
-    private float dragPlaneHeight = 1.2f;
+    private float dragPlaneHeight = -1.1f;
 
     void Start()
     {
