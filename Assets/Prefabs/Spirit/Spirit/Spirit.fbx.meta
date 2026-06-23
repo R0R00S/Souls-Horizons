@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_hood
     second: {fileID: 2100000, guid: b4b35346ad18f5e47a49c620cf1d5225, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Hood.Emission
+    second: {fileID: 2800000, guid: d9e75d5d7d9dc2245bddc0141b3ca143, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
