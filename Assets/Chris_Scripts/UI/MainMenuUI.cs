@@ -35,6 +35,10 @@ public class MainMenuUI : MonoBehaviour
     // Hook to Quit button OnClick
     public void OnQuitPressed()
     {
+#if UNITY_WEBGL
+        SceneLoader.Instance.GoToMainMenu(); // can't quit a browser tab
+#else
         SceneLoader.Instance.QuitGame();
+#endif
     }
 }
