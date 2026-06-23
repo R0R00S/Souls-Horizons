@@ -33,13 +33,13 @@ public class InputManager : MonoBehaviour
     {
         Ray ray = cam.ScreenPointToRay(GetInputPosition());
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        // 0.4f is generous for a finger tap — adjust based on your box size
+        if (Physics.SphereCast(ray, 0.4f, out RaycastHit hit, 50f))
         {
             if (hit.collider.CompareTag("Box"))
             {
                 heldBox = hit.collider.gameObject;
 
-                // Drag plane at floor level — box collider stays here
                 dragPlane = new Plane(Vector3.up, new Vector3(0, dragPlaneHeight, 0));
 
                 if (dragPlane.Raycast(ray, out float dist))

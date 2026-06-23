@@ -44,4 +44,17 @@ public class LevelData : ScriptableObject
     public float pitSpawnActivationTime = 30f;  // seconds into the level before pit spawning begins
     public float pitMinSpawnInterval = 5f;       // slower than the belt by default
     public float pitMaxSpawnInterval = 12f;
+
+    void OnValidate()
+    {
+        if (urgencyTimeThreshold >= levelDuration)
+        {
+            urgencyTimeThreshold = levelDuration * 0.25f;
+            Debug.LogWarning(name + ": urgencyTimeThreshold was longer than the level, auto-corrected.");
+        }
+
+        if (pitSpawnActivationTime >= levelDuration)
+            Debug.LogWarning(name + ": pitSpawnActivationTime is after level ends — pits will never spawn.");
+    }
+
 }
