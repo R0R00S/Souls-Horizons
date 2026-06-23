@@ -6,9 +6,9 @@ public class SceneLoader : MonoBehaviour
     public static SceneLoader Instance;
 
     // Scene name constants — update these to match your actual scene names
-    public const string MAIN_MENU = "MainMenu";
-    public const string LEVEL_SELECT = "LevelSelect";
-    public const string GAME = "Game";
+    public const string MAIN_MENU = "Chris_StartScreen";
+    public const string LEVEL_SELECT = "Chris_LevelSelect";
+    public const string GAME = "Chris_Game";
 
     [Header("Level Order — same order as Level Select buttons")]
     public LevelData[] levelOrder; // drag Level1, Level2, Level3 in order

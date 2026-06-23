@@ -28,8 +28,18 @@ public class BoxSpawner : MonoBehaviour
     {
         if (!GameManager.Instance.isGameActive || isStopped) return;
 
-        float urgencyMultiplier = GameManager.Instance.timeRemaining < 20f ? 1.5f : 1f;
-        currentBeltSpeed = GameManager.Instance.currentLevel.beltSpeed * urgencyMultiplier;
+        
+       
+        LevelData lvl = GameManager.Instance.currentLevel;
+        float urgencyMultiplier = GameManager.Instance.timeRemaining < lvl.urgencyTimeThreshold
+            ? lvl.urgencySpeedMultiplier
+            : 1f;
+        currentBeltSpeed = lvl.beltSpeed * urgencyMultiplier;
+
+        currentBeltSpeed = Mathf.Min(
+        lvl.beltSpeed * urgencyMultiplier,
+        lvl.maxBeltSpeed
+        );
 
         if (activeBoxCount < GameManager.Instance.currentLevel.maxSimultaneousBoxes)
         {

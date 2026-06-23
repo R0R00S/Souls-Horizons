@@ -9,6 +9,7 @@ public class LevelData : ScriptableObject
     public float minSpawnInterval = 1.5f;
     public float maxSpawnInterval = 4f;
     public int maxSimultaneousBoxes = 1;
+    public float maxBeltSpeed = 4f;
 
     [Header("Pit Settings")]
     public int numberOfPits = 2;
@@ -19,6 +20,13 @@ public class LevelData : ScriptableObject
     [Range(0, 100)] public int typeBChance = 40;
     [Range(0, 100)] public int typeCChance = 0;
     [Range(0, 100)] public int typeDChance = 0;
+
+    // In LevelData.cs add:
+    [Header("Difficulty Ramp")]
+    [Tooltip("Urgency speed boost kicks in when time remaining drops below this value")]
+    public float urgencyTimeThreshold = 20f;
+    [Tooltip("Speed multiplier applied during urgency phase")]
+    public float urgencySpeedMultiplier = 1.5f;
 
     [Header("Flame Settings")]
     public float flameMinSpawnInterval = 4f;
