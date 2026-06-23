@@ -17,6 +17,17 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
+        // Use whatever level was selected on the Level Select screen
+        if (SceneLoader.Instance != null && SceneLoader.Instance.selectedLevel != null)
+            currentLevel = SceneLoader.Instance.selectedLevel;
+
+        // Fallback — if currentLevel is still null (e.g. running Game scene directly
+        // in the Editor without going through Level Select), use whatever is
+        // assigned in the Inspector as a default
+        if (currentLevel == null)
+            Debug.LogError("No LevelData assigned. Run from LevelSelect or assign a default.");
+
         timeRemaining = currentLevel.levelDuration;
     }
 
