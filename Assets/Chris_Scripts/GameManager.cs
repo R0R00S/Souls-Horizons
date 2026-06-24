@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
+
         if (SceneLoader.Instance != null && SceneLoader.Instance.selectedLevel != null)
         {
             currentLevel = SceneLoader.Instance.selectedLevel;

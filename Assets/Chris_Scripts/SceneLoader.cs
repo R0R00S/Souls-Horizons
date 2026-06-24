@@ -3,35 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    
+    public static SceneLoader Instance;
 
-    // Scene name constants — update these to match your actual scene names
     public const string MAIN_MENU = "Chris_StartScreen";
     public const string LEVEL_SELECT = "Chris_LevelSelect";
-    
 
     [Header("Level Order — same order as Level Select buttons")]
-    public LevelData[] levelOrder; // drag Level1, Level2, Level3 in order
-
-    private static SceneLoader instance;
-    public static SceneLoader Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-
-            }
-            return instance;
-        }
-        private set { instance = value; }
-    }
+    public LevelData[] levelOrder;
 
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -56,8 +40,6 @@ public class SceneLoader : MonoBehaviour
     {
         selectedLevel = levelData;
         Time.timeScale = 1;
-
-        // Load whatever scene this LevelData specifies
         SceneManager.LoadScene(levelData.sceneName);
     }
 
@@ -70,7 +52,6 @@ public class SceneLoader : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        // In Editor this does nothing — the log below confirms it fired
         Debug.Log("Quit called");
     }
 
@@ -84,10 +65,8 @@ public class SceneLoader : MonoBehaviour
                 return levelOrder[i + 1];
         }
 
-        return null; // already on last level
+        return null;
     }
 
-    // Holds the chosen LevelData between scenes
-    // GameManager reads this in Awake to know which level to run
     [HideInInspector] public LevelData selectedLevel;
 }

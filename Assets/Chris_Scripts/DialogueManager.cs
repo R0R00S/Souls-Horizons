@@ -22,12 +22,10 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }
-
-    void Start()
-    {
         dialoguePanel.SetActive(false);
     }
+
+   
 
     // Called by GameManager at the start — plays opening dialogue then calls back
     public void PlayOpeningSequence(DialogueSequence sequence, System.Action onComplete)
@@ -49,6 +47,10 @@ public class DialogueManager : MonoBehaviour
 
         dialoguePanel.SetActive(true);
         ShowCurrentLine();
+
+        dialoguePanel.SetActive(true);
+        Debug.Log("activeSelf: " + dialoguePanel.activeSelf +
+                  " | activeInHierarchy: " + dialoguePanel.activeInHierarchy);
     }
 
     void ShowCurrentLine()

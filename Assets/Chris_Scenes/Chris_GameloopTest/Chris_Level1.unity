@@ -5099,6 +5099,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4229906404711782541, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
+      propertyPath: levelOrder.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229906404711782541, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
+      propertyPath: 'levelOrder.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fec62c923f397d645ac014eeacef61c5, type: 2}
+    - target: {fileID: 4229906404711782541, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
+      propertyPath: 'levelOrder.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a2bd1c326e8e31341a41b8fd40aed2f1, type: 2}
+    - target: {fileID: 4229906404711782541, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
+      propertyPath: 'levelOrder.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8923aa96a64603a42be8c306afd2cf6c, type: 2}
     - target: {fileID: 8242584571828873325, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
       propertyPath: m_Name
       value: SceneLoader
@@ -5317,6 +5333,10 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8984694167845355391, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5324,7 +5344,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 841036258}
     - targetCorrespondingSourceObject: {fileID: 6052873548701565737, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 1497850843}
     - targetCorrespondingSourceObject: {fileID: 6052873548701565737, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
       insertIndex: -1
