@@ -38,3 +38,4 @@ MonoBehaviour:
   pitSpawnActivationTime: 30
   pitMinSpawnInterval: 5
   pitMaxSpawnInterval: 12
+  dialogueData: {fileID: 11400000, guid: 928afca360f3fe94ebcd30cfed95dc4f, type: 2}
