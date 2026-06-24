@@ -20,11 +20,7 @@ public class SceneLoader : MonoBehaviour
         {
             if (instance == null)
             {
-                // No SceneLoader in the scene yet — create one on the fly
-                GameObject go = new GameObject("SceneLoader");
-                instance = go.AddComponent<SceneLoader>();
-                DontDestroyOnLoad(go);
-                Debug.Log("SceneLoader auto-created");
+
             }
             return instance;
         }
@@ -33,9 +29,9 @@ public class SceneLoader : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
