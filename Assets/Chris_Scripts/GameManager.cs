@@ -18,17 +18,37 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        // Use whatever level was selected on the Level Select screen
         if (SceneLoader.Instance != null && SceneLoader.Instance.selectedLevel != null)
+        {
             currentLevel = SceneLoader.Instance.selectedLevel;
+        }
 
-        // Fallback — if currentLevel is still null (e.g. running Game scene directly
-        // in the Editor without going through Level Select), use whatever is
-        // assigned in the Inspector as a default
+        // currentLevel might already be assigned in the Inspector as a fallback
+        // for when you start directly from this scene in the Editor
         if (currentLevel == null)
-            Debug.LogError("No LevelData assigned. Run from LevelSelect or assign a default.");
+        {
+            Debug.LogWarning("No LevelData from SceneLoader — using Inspector fallback.");
+        }
+
+        if (currentLevel == null)
+        {
+            Debug.LogError("No LevelData assigned anywhere. Assign one in the Inspector.");
+            return;
+        }
 
         timeRemaining = currentLevel.levelDuration;
+    }
+
+    void Start()
+    {
+        // Don't start gameplay yet — wait for opening dialogue to finish
+        isGameActive = false;
+
+        LevelDialogueData dialogueData = currentLevel.dialogueData;
+
+        DialogueSequence opening = dialogueData != null ? dialogueData.openingSequence : null;
+
+        DialogueManager.Instance.PlayOpeningSequence(opening, OnOpeningDialogueComplete);
     }
 
     void Update()
@@ -38,7 +58,9 @@ public class GameManager : MonoBehaviour
         timeRemaining -= Time.deltaTime;
         timeElapsed += Time.deltaTime;
 
-        // Only update UI once per second to avoid string allocation every frame
+        // Check mid-level notifications
+        CheckNotifications();
+
         int currentSecond = Mathf.CeilToInt(timeRemaining);
         if (currentSecond != lastDisplayedSecond)
         {
@@ -46,8 +68,7 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.UpdateTimer(currentSecond.ToString());
         }
 
-        if (timeRemaining <= 0f)
-            LevelWin();
+        if (timeRemaining <= 0f) LevelWin();
     }
 
     public void WrongPit()
@@ -100,4 +121,33 @@ public class GameManager : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );
     }
+
+    void OnOpeningDialogueComplete()
+    {
+        // Dialogue finished — now actually start the level
+        Time.timeScale = 1;
+        isGameActive = true;
+
+        // Optional: trigger your door opening animation here before setting isGameActive
+        // For now just starts immediately
+        Debug.Log("Level started");
+    }
+
+    void CheckNotifications()
+    {
+        if (currentLevel.dialogueData == null) return;
+
+        foreach (LevelNotification notification in currentLevel.dialogueData.notifications)
+        {
+            if (!notification.hasTriggered && timeElapsed >= notification.triggerAtTime)
+            {
+                notification.hasTriggered = true;
+                NotificationManager.Instance.ShowNotification(
+                    notification.message,
+                    notification.displayDuration
+                );
+            }
+        }
+    }
+
 }

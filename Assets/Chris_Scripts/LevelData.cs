@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelData", menuName = "Game/Level Data")]
 public class LevelData : ScriptableObject
 {
+    [Header("Scene")]
+    public string sceneName = "Game_Level1"; // must match the scene filename exactly
+
+
     [Header("Level Settings")]
     public float levelDuration = 60f;
     public float beltSpeed = 2f;
@@ -44,6 +48,9 @@ public class LevelData : ScriptableObject
     public float pitSpawnActivationTime = 30f;  // seconds into the level before pit spawning begins
     public float pitMinSpawnInterval = 5f;       // slower than the belt by default
     public float pitMaxSpawnInterval = 12f;
+
+    [Header("Dialogue")]
+    public LevelDialogueData dialogueData; // optional — leave empty for no dialogue
 
     void OnValidate()
     {

@@ -3,20 +3,36 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public static SceneLoader Instance;
+    
 
     // Scene name constants — update these to match your actual scene names
     public const string MAIN_MENU = "Chris_StartScreen";
     public const string LEVEL_SELECT = "Chris_LevelSelect";
-    public const string GAME = "Chris_Game";
+    
 
     [Header("Level Order — same order as Level Select buttons")]
     public LevelData[] levelOrder; // drag Level1, Level2, Level3 in order
 
+    private static SceneLoader instance;
+    public static SceneLoader Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                // No SceneLoader in the scene yet — create one on the fly
+                GameObject go = new GameObject("SceneLoader");
+                instance = go.AddComponent<SceneLoader>();
+                DontDestroyOnLoad(go);
+                Debug.Log("SceneLoader auto-created");
+            }
+            return instance;
+        }
+        private set { instance = value; }
+    }
 
     void Awake()
     {
-        // Persist across scene loads so LevelData selection survives the transition
         if (Instance == null)
         {
             Instance = this;
@@ -42,16 +58,17 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadLevel(LevelData levelData)
     {
-        // Store which level to load, then load the Game scene
         selectedLevel = levelData;
         Time.timeScale = 1;
-        SceneManager.LoadScene(GAME);
+
+        // Load whatever scene this LevelData specifies
+        SceneManager.LoadScene(levelData.sceneName);
     }
 
     public void ReloadCurrentLevel()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(GAME);
+        SceneManager.LoadScene(selectedLevel.sceneName);
     }
 
     public void QuitGame()
