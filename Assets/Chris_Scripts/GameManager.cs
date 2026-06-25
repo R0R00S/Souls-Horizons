@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
-        FlameSpawner.Instance.StopSpawning();
+        
 
         // Stop all pit spawners
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
-        FlameSpawner.Instance.StopSpawning();
+        
 
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
             ps.StopSpawning();
