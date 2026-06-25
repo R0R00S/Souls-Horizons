@@ -14,28 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   sceneName: Chris_Level1
   levelDuration: 60
-  beltSpeed: 1.5
+  beltSpeed: 1
   minSpawnInterval: 0.7
   maxSpawnInterval: 2.86
   maxSimultaneousBoxes: 20
   maxBeltSpeed: 4
-  numberOfPits: 4
+  numberOfPits: 3
   noneChance: 2
   typeAChance: 12
   typeBChance: 21
-  typeCChance: 13
-  typeDChance: 18
-  urgencyTimeThreshold: 5
-  urgencySpeedMultiplier: 1.2
-  flameMinSpawnInterval: 11.34
-  flameMaxSpawnInterval: 38
-  maxActiveFlames: 5
-  flameStartSize: 8.05
-  flameExplodeSize: 15.1
-  flameExtinguishSize: 2
-  flameGrowthRate: 0.5
-  flameShrinkRate: 2
-  pitSpawnActivationTime: 15
-  pitMinSpawnInterval: 3.73
-  pitMaxSpawnInterval: 6.46
+  typeCChance: 8
+  typeDChance: 0
+  urgencyTimeThreshold: 20
+  urgencySpeedMultiplier: 1.7
+  pitSpawnActivationTime: 20
+  pitMinSpawnInterval: 2
+  pitMaxSpawnInterval: 4
   dialogueData: {fileID: 11400000, guid: 1fccca30a024cc64889cab24939ae9bf, type: 2}

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 163593366268743605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.6683, y: -0.10434, z: -0.28601}
+  m_LocalPosition: {x: 12.812, y: 0.448, z: -11.033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3838fa7dc7fd14243b0dd5e02c00c995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
+  boundsMinX: -23.2
+  boundsMaxX: 19.25
+  boundsMinZ: -19.2
+  boundsMaxZ: 7.8
+  draggableLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1442277145500387580
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +98,7 @@ MonoBehaviour:
   currentLevel: {fileID: 11400000, guid: fec62c923f397d645ac014eeacef61c5, type: 2}
   lives: 3
   timeRemaining: 60
+  timeElapsed: 0
   isGameActive: 1
 --- !u!1 &1902448037303921905
 GameObject:
@@ -143,6 +151,54 @@ MonoBehaviour:
   - {fileID: 0}
   gameOverScreen: {fileID: 0}
   winScreen: {fileID: 0}
+  pausePanel: {fileID: 0}
+  pauseButton: {fileID: 0}
+--- !u!1 &1928387254372167024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7690699437470604775}
+  - component: {fileID: 3383748567716188199}
+  m_Layer: 0
+  m_Name: NotificationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7690699437470604775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928387254372167024}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1094.2135, y: 738.5657, z: -0.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1230888635907094977}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3383748567716188199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928387254372167024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf3007c0ca55cb4e873c1aec7c4d788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotificationManager
+  notificationPanel: {fileID: 0}
+  notificationText: {fileID: 0}
 --- !u!1 &4039202533908613336
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,5 +231,55 @@ Transform:
   - {fileID: 3161699136592980113}
   - {fileID: 1304429434351880693}
   - {fileID: 1562877201415245533}
+  - {fileID: 7690699437470604775}
+  - {fileID: 3790114063308602100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5125198388693984673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3790114063308602100}
+  - component: {fileID: 2610685219458961963}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3790114063308602100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125198388693984673}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1094.2135, y: 738.5657, z: -0.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1230888635907094977}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2610685219458961963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125198388693984673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62be55fccb191814c985808b0d46f5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  continuePromptText: {fileID: 0}
+  skipButton: {fileID: 0}

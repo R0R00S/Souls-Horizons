@@ -46,7 +46,11 @@ public class SceneLoader : MonoBehaviour
     public void ReloadCurrentLevel()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(selectedLevel.sceneName);
+
+        if (selectedLevel != null)
+            SceneManager.LoadScene(selectedLevel.sceneName);
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // fallback
     }
 
     public void QuitGame()

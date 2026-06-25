@@ -19,22 +19,14 @@ MonoBehaviour:
   maxSpawnInterval: 4
   maxSimultaneousBoxes: 1
   maxBeltSpeed: 4
-  numberOfPits: 2
-  noneChance: 20
+  numberOfPits: 4
+  noneChance: 4
   typeAChance: 40
   typeBChance: 40
-  typeCChance: 0
-  typeDChance: 0
+  typeCChance: 17
+  typeDChance: 14
   urgencyTimeThreshold: 20
   urgencySpeedMultiplier: 1.5
-  flameMinSpawnInterval: 4
-  flameMaxSpawnInterval: 10
-  maxActiveFlames: 2
-  flameStartSize: 4
-  flameExplodeSize: 10
-  flameExtinguishSize: 0.5
-  flameGrowthRate: 0.5
-  flameShrinkRate: 2
   pitSpawnActivationTime: 30
   pitMinSpawnInterval: 5
   pitMaxSpawnInterval: 12

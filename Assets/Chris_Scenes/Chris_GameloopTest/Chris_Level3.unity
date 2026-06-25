@@ -2078,59 +2078,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5214280274363973053, guid: 9c12401318542cf40b53545dc054d015, type: 3}
-    - {fileID: 3941724691701734300, guid: 9c12401318542cf40b53545dc054d015, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4028353140383672061, guid: 9c12401318542cf40b53545dc054d015, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 694752468}
-    - targetCorrespondingSourceObject: {fileID: 4028353140383672061, guid: 9c12401318542cf40b53545dc054d015, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 694752469}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c12401318542cf40b53545dc054d015, type: 3}
---- !u!1 &694752466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4028353140383672061, guid: 9c12401318542cf40b53545dc054d015, type: 3}
-  m_PrefabInstance: {fileID: 694752465}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &694752468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694752466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6f813729b46d046964ef0275804077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlameHazard
---- !u!136 &694752469
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694752466}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.47623086
-  m_Height: 2.8083398
-  m_Direction: 1
-  m_Center: {x: -0.007951901, y: -0.027002372, z: 0}
 --- !u!1 &711772868
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,12 +5337,32 @@ PrefabInstance:
       value: Managers
       objectReference: {fileID: 0}
     - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMaxX
+      value: 19.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMaxZ
+      value: 8.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMinX
+      value: -22.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMinZ
+      value: -19.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: dragHeight
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: liftHeight
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: draggableLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7885997681261333600, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: timerText

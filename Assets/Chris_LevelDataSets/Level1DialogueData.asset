@@ -21,6 +21,8 @@ MonoBehaviour:
     - Soul spawning time yeehoo
   notifications:
   - triggerAtTime: 10
-    message: IS THIS AFTER 10 SECONDS OR AT 10 SECONDS
+    message: 'Pop up timeee
+
+'
     displayDuration: 5
     hasTriggered: 0
