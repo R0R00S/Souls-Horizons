@@ -7,12 +7,15 @@ public class InputManager : MonoBehaviour
     private Vector3 dragOffset;
     private Plane dragPlane;
 
+    public static InputManager Instance;
+
     // Drag plane height — set this to match your floor's Y position
     // No separate liftHeight needed anymore, animation handles visual displacement
     private float dragPlaneHeight = -0.4f;
 
     void Start()
     {
+        Instance = this;
         cam = Camera.main;
     }
 
@@ -103,5 +106,14 @@ public class InputManager : MonoBehaviour
     {
         if (Input.touchCount > 0) return Input.GetTouch(0).phase == TouchPhase.Ended;
         return Input.GetMouseButtonUp(0);
+    }
+
+    // Add to InputManager.cs
+    public void ForceRelease()
+    {
+        if (heldBox == null) return;
+
+        heldBox.GetComponent<BoxDraggable>().OnRelease();
+        heldBox = null;
     }
 }

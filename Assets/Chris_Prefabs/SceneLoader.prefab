@@ -44,8 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7055e71357ac02c4086345ca11c2cee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  levelOrder:
-  - {fileID: 11400000, guid: fec62c923f397d645ac014eeacef61c5, type: 2}
-  - {fileID: 11400000, guid: a2bd1c326e8e31341a41b8fd40aed2f1, type: 2}
-  - {fileID: 11400000, guid: 8923aa96a64603a42be8c306afd2cf6c, type: 2}
+  levelOrder: []
   selectedLevel: {fileID: 0}

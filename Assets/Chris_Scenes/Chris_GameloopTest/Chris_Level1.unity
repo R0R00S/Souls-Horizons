@@ -5101,7 +5101,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4229906404711782541, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
       propertyPath: levelOrder.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4229906404711782541, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
       propertyPath: 'levelOrder.Array.data[0]'
@@ -5164,6 +5164,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
+--- !u!114 &7328598668212508227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4229906404711782541, guid: 2e14fc9bd45950f459896be94dde6511, type: 3}
+  m_PrefabInstance: {fileID: 7328598668212508226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7055e71357ac02c4086345ca11c2cee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
 --- !u!1001 &7633646487167257038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5284,7 +5295,15 @@ PrefabInstance:
     - target: {fileID: 2169619107973547345, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 906962295}
+      objectReference: {fileID: 7328598668212508227}
+    - target: {fileID: 2169619107973547345, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadCurrentLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2169619107973547345, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3260163084916796154, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5292,7 +5311,15 @@ PrefabInstance:
     - target: {fileID: 3784199714058215859, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 906962295}
+      objectReference: {fileID: 7328598668212508227}
+    - target: {fileID: 3784199714058215859, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadCurrentLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784199714058215859, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4199511946671599535, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
       propertyPath: m_IgnoreParentGroups
       value: 1
