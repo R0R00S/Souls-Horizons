@@ -142,5 +142,5 @@ MonoBehaviour:
   activationTimeOverride: -1
   minIntervalOverride: -1
   maxIntervalOverride: -1
-  spawnedSoulType: 1
+  spawnedSoulType: 2
   customTarget: {fileID: 0}

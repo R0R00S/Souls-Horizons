@@ -15,12 +15,8 @@ MonoBehaviour:
   openingSequence:
     enabled: 1
     lines:
-    - 'Yo Welcome to level 1
+    - 'Welcome, your job is to sort out souls to the pit they belong to.
 
 '
-    - Soul spawning time yeehoo
-  notifications:
-  - triggerAtTime: 10
-    message: IS THIS AFTER 10 SECONDS OR AT 10 SECONDS
-    displayDuration: 5
-    hasTriggered: 0
+    - Dont forget to let the pure souls pass though.
+  notifications: []

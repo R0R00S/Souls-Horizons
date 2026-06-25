@@ -7,9 +7,9 @@ public class InputManager : MonoBehaviour
     private Vector3 dragOffset;
     private Plane dragPlane;
 
-    // Drag plane height — set this to match your floor's Y position
+    // Drag plane height ï¿½ set this to match your floor's Y position
     // No separate liftHeight needed anymore, animation handles visual displacement
-    private float dragPlaneHeight = -0.4f;
+    private float dragPlaneHeight = 1.5f;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
     {
         Ray ray = cam.ScreenPointToRay(GetInputPosition());
 
-        // 0.4f is generous for a finger tap — adjust based on your box size
+        // 0.4f is generous for a finger tap ï¿½ adjust based on your box size
         if (Physics.SphereCast(ray, 0.4f, out RaycastHit hit, 50f))
         {
             if (hit.collider.CompareTag("Box"))
