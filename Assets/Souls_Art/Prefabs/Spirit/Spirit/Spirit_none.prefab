@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1946810099289101804}
   - component: {fileID: 6840444816331714773}
   - component: {fileID: 5731434136677495443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8837394293086331135}
   - component: {fileID: 253029228680956207}
   - component: {fileID: 8775259900004811308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spirit_none
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -272,6 +272,10 @@ PrefabInstance:
     - target: {fileID: 902304727124585028, guid: 7e3e965fc7a59924fb743b9ad1698708, type: 3}
       propertyPath: m_Name
       value: Spirit None
+      objectReference: {fileID: 0}
+    - target: {fileID: 902304727124585028, guid: 7e3e965fc7a59924fb743b9ad1698708, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

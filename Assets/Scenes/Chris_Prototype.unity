@@ -6629,12 +6629,32 @@ PrefabInstance:
       value: Managers
       objectReference: {fileID: 0}
     - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMaxX
+      value: 19.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMaxZ
+      value: 8.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMinX
+      value: -23.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: boundsMinZ
+      value: -19.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: dragHeight
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: liftHeight
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
+      propertyPath: draggableLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7885997681261333600, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: timerText
