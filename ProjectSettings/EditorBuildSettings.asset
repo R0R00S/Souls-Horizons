@@ -6,19 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Chris_Scenes/Chris_GameloopTest/Chris_StartScreen.unity
+    path: Assets/Chris/Chris_Scenes/Chris_GameloopTest/Chris_StartScreen.unity
     guid: 123b254b975994045b476277eb77570a
   - enabled: 0
-    path: Assets/Chris_Scenes/Chris_GameloopTest/Chris_LevelSelect.unity
+    path: Assets/Chris/Chris_Scenes/Chris_GameloopTest/Chris_LevelSelect.unity
     guid: 06a43f361b3f706419623e73e3165f7d
   - enabled: 0
-    path: Assets/Chris_Scenes/Chris_GameloopTest/Chris_Level1.unity
+    path: Assets/Chris/Chris_Scenes/Chris_GameloopTest/Chris_Level1.unity
     guid: 1ad2082cf51f000458aabb97aa7af98e
   - enabled: 0
-    path: Assets/Chris_Scenes/Chris_GameloopTest/Chris_Level2.unity
+    path: Assets/Chris/Chris_Scenes/Chris_GameloopTest/Chris_Level2.unity
     guid: 2b6c5cf4a60c2a7408e97dde9488cca2
   - enabled: 0
-    path: Assets/Chris_Scenes/Chris_GameloopTest/Chris_Level3.unity
+    path: Assets/Chris/Chris_Scenes/Chris_GameloopTest/Chris_Level3.unity
     guid: 72d68e475a0f2c5468ed66be1263cee1
   - enabled: 1
     path: Assets/Scenes/Robin_Prototype.unity

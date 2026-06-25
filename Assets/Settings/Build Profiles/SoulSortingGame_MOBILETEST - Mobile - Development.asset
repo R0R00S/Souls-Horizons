@@ -955,11 +955,11 @@ MonoBehaviour:
     - line: '|   captureStartupLogs: {}'
     - line: '|   activeInputHandler: 2'
     - line: '|   windowsGamepadBackendHint: 0'
-    - line: '|   cloudProjectId: a599e474-c7ad-4d23-a8bc-250535274431'
+    - line: '|   cloudProjectId: 0185ab53-d322-4d4c-a344-7de65757854c'
     - line: '|   framebufferDepthMemorylessMode: 0'
     - line: '|   qualitySettingsNames: []'
-    - line: '|   projectName: Souls-Horizons Game'
-    - line: '|   organizationId: chrisduijmpie'
+    - line: '|   projectName: Souls-Horizons Game (1)'
+    - line: '|   organizationId: roosendaalannerobin'
     - line: '|   cloudEnabled: 0'
     - line: '|   legacyClampBlendShapeWeights: 0'
     - line: '|   hmiLoadingImage: {instanceID: 0}'
@@ -975,8 +975,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 7850742123107450881
       type: {class: WebGLPlatformSettings, ns: UnityEditor.WebGL, asm: UnityEditor.WebGL.Extensions}
       data:
