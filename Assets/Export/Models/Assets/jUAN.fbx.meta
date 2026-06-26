@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: a20e10f947be58a46a0c1aab7bbb4df3
+guid: f3018621d146b4844a06a3af2a3aaff8
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Spirit
-    second: {fileID: 2100000, guid: 4bca7f12bf8c93f40947fbe4cd28fad0, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
