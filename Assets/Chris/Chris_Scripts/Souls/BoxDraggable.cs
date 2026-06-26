@@ -16,7 +16,7 @@ public class BoxDraggable : MonoBehaviour
 
     void Awake()
     {
-        // Renderer is now on the Visual child � find it there
+        // Renderer is now on the Visual child — find it there
         boxRenderer = GetComponentInChildren<Renderer>();
     }
 
@@ -25,11 +25,13 @@ public class BoxDraggable : MonoBehaviour
         isBeingHeld = false;
         isFlashing = false;
 
-        // Make sure animation resets to idle when pulled from pool
         if (visualAnimator != null)
+        {
             visualAnimator.SetBool("IsHeld", false);
+            visualAnimator.Play("BoxIdle", 0, 0f);
+            visualAnimator.Update(0f); // force-sample the pose immediately
+        }
     }
-
     public void OnPickUp()
     {
         isBeingHeld = true;
@@ -112,8 +114,4 @@ public class BoxDraggable : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, 0.6f);
         }
     }
-
-
-
-
 }
