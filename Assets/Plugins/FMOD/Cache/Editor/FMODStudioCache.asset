@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8842730981685890230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Darkest Child Var./MusicProgression
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: MusicProgression
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3026580487
+    data2: 3960979035
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Value A
+  - Value B
+  - Value C
+  Exists: 1
 --- !u!114 &-8474611280007398860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +74,61 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-7674012874167258495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Grim Idol
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Grim Idol
+  Guid:
+    Data1: 1835892023
+    Data2: 1285624707
+    Data3: 2075147421
+    Data4: 735607615
+  Banks:
+  - {fileID: 8478660773752171115}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1889341363474601090}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 224622
+--- !u!114 &-7143561930704071873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pickup
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Pickup
+  Guid:
+    Data1: -1915604542
+    Data2: 1135592669
+    Data3: -1262759012
+    Data4: -445281037
+  Banks:
+  - {fileID: 8478660773752171115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1133
 --- !u!114 &-6581466174490112957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +185,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 145606
+--- !u!114 &-4714225122202204912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Darkest Child Var.
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Darkest Child Var.
+  Guid:
+    Data1: 2085711508
+    Data2: 1275061745
+    Data3: 1961571729
+    Data4: 1254682721
+  Banks:
+  - {fileID: 8478660773752171115}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8842730981685890230}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 197351
 --- !u!114 &-3095830780385146198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +232,33 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1136
+  Exists: 1
+--- !u!114 &-2325204942299663786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Southern Gothic/MusicProgression
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: MusicProgression
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3026580487
+    data2: 3960979035
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Value A
+  - Value B
+  - Value C
   Exists: 1
 --- !u!114 &-2085988305458402020
 MonoBehaviour:
@@ -150,6 +287,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1133
+--- !u!114 &-1889341363474601090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Grim Idol/MusicProgression
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: MusicProgression
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3026580487
+    data2: 3960979035
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Value A
+  - Value B
+  - Value C
+  Exists: 1
 --- !u!114 &-58471655292545256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,24 +347,24 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
-  - {fileID: -3095830780385146198}
-  - {fileID: -58471655292545256}
-  - {fileID: -8410678594607000748}
+  - {fileID: 1633512902434973281}
+  - {fileID: 8478660773752171115}
+  - {fileID: 5437522381059131179}
   EditorEvents:
-  - {fileID: 5834850177087603436}
-  - {fileID: -5466318786992044014}
-  - {fileID: 1597419894200859929}
-  - {fileID: -6581466174490112957}
-  - {fileID: -2085988305458402020}
-  - {fileID: -8474611280007398860}
-  - {fileID: 1468847369209009922}
+  - {fileID: 7777120829339863785}
+  - {fileID: 1190854981589388901}
+  - {fileID: -7674012874167258495}
+  - {fileID: 3350509626923888070}
+  - {fileID: -4714225122202204912}
+  - {fileID: -7143561930704071873}
+  - {fileID: 4441172872607985718}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -8410678594607000748}
+  - {fileID: 5437522381059131179}
   StringsBanks:
-  - {fileID: -3095830780385146198}
+  - {fileID: 1633512902434973281}
   cacheVersion: 131860
-  cacheTime: 639179988300501219
+  cacheTime: 639180681718221611
   SerializableEventsDict:
   - key: event:/LoseLife
     index: 0
@@ -210,12 +374,67 @@ MonoBehaviour:
     index: 2
   - key: event:/Obliteration
     index: 3
-  - key: event:/Pickup
-    index: 4
-  - key: event:/Drop
-    index: 5
   - key: event:/Darkest Child Var.
+    index: 4
+  - key: event:/Pickup
+    index: 5
+  - key: event:/Drop
     index: 6
+--- !u!114 &862395712113035431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Obliteration/MusicProgression
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: MusicProgression
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3026580487
+    data2: 3960979035
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Value A
+  - Value B
+  - Value C
+  Exists: 1
+--- !u!114 &1190854981589388901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Southern Gothic
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Southern Gothic
+  Guid:
+    Data1: 1139203372
+    Data2: 1131718806
+    Data3: -278834273
+    Data4: -906264871
+  Banks:
+  - {fileID: 8478660773752171115}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2325204942299663786}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 145606
 --- !u!114 &1468847369209009922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +491,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 224622
+--- !u!114 &1633512902434973281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639180681718221611
+  FileSizes:
+  - Name: Desktop
+    Value: 1136
+  Exists: 1
 --- !u!114 &2295419631260427951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +538,61 @@ MonoBehaviour:
   - Value B
   - Value C
   Exists: 1
+--- !u!114 &3350509626923888070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Obliteration
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Obliteration
+  Guid:
+    Data1: -2147246960
+    Data2: 1269652282
+    Data3: -219360631
+    Data4: 1031894485
+  Banks:
+  - {fileID: 8478660773752171115}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 862395712113035431}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 149181
+--- !u!114 &4441172872607985718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drop
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Drop
+  Guid:
+    Data1: -557939742
+    Data2: 1156200497
+    Data3: 1572491431
+    Data4: 1236324235
+  Banks:
+  - {fileID: 8478660773752171115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 166
 --- !u!114 &5423063354503039130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +619,26 @@ MonoBehaviour:
   - Value A
   - Value B
   - Value C
+  Exists: 1
+--- !u!114 &5437522381059131179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639180681718202365
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
   Exists: 1
 --- !u!114 &5834850177087603436
 MonoBehaviour:
@@ -379,6 +693,53 @@ MonoBehaviour:
   - Value A
   - Value B
   - Value C
+  Exists: 1
+--- !u!114 &7777120829339863785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LoseLife
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/LoseLife
+  Guid:
+    Data1: -1623420154
+    Data2: 1139287376
+    Data3: -1505650775
+    Data4: 357763838
+  Banks:
+  - {fileID: 8478660773752171115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4886
+--- !u!114 &8478660773752171115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Game.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Game.bank
+  Name: Game
+  StudioPath: bank:/Game
+  lastModified: 639180681718202365
+  FileSizes:
+  - Name: Desktop
+    Value: 10155200
   Exists: 1
 --- !u!114 &8866266883020926740
 MonoBehaviour:
