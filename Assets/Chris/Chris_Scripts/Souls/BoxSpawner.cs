@@ -58,9 +58,8 @@ public class BoxSpawner : MonoBehaviour
     void SpawnBox()
     {
         Vector3 spawnPos = spawnPoint.position;
-        spawnPos.x += activeBoxCount * 1.2f;
+        spawnPos.x += Random.Range(-0.3f, 0.3f);
 
-        // Pick a type first, then fetch the matching prefab from the pool
         BoxType chosenType = PickBoxType();
 
         GameObject box = BoxPool.Instance.GetBox(chosenType, spawnPos);
