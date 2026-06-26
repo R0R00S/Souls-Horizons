@@ -28,7 +28,12 @@ public class AudioManager : MonoBehaviour
         PlayOneShot(loseLifeSfx);
     }
 
-    public void PlayPickupSoul()  => PlayOneShot(pickupSoulSfx);
+    public void PlayPickupSoul()
+    {
+        Debug.Log("PlayPickupSoul called, event null? " + pickupSoulSfx.IsNull);
+        PlayOneShot(pickupSoulSfx);
+    }
+
     public void PlayDropSoul()    => PlayOneShot(dropSoulSfx);
 
     void PlayOneShot(EventReference sfxEvent)

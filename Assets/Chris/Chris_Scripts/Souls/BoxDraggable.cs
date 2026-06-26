@@ -16,7 +16,7 @@ public class BoxDraggable : MonoBehaviour
 
     void Awake()
     {
-        // Renderer is now on the Visual child — find it there
+        // Renderer is now on the Visual child ï¿½ find it there
         boxRenderer = GetComponentInChildren<Renderer>();
     }
 
@@ -34,18 +34,20 @@ public class BoxDraggable : MonoBehaviour
     {
         isBeingHeld = true;
 
+        AudioManager.Instance.PlayPickupSoul();
+
         if (visualAnimator != null)
         {
             visualAnimator.SetBool("IsHeld", true);
             Debug.Log("IsHeld set to true, animator state: " + visualAnimator.GetCurrentAnimatorStateInfo(0).IsName("BoxPickedUp"));
         }
-        
-       
     }
 
     public void OnRelease()
     {
         isBeingHeld = false;
+
+        AudioManager.Instance.PlayDropSoul();
 
         if (visualAnimator != null)
             visualAnimator.SetBool("IsHeld", false);
@@ -65,7 +67,7 @@ public class BoxDraggable : MonoBehaviour
                 BoxPool.Instance.ReturnBox(gameObject);
             }
         }
-        // No pit hit — coroutine resumes from current position toward gate
+        // No pit hit â€” coroutine resumes from current position toward gate
     }
 
     PitTarget GetOverlappingPit()
