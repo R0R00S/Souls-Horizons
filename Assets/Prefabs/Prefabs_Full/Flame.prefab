@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1674707931754042729}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0.28, z: -0.11}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: 0, y: 0.44, z: -1.37}
+  m_LocalScale: {x: 0.63, y: 0.63, z: 0.63}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5194166342625367413}
@@ -124,7 +124,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5194166342625367413}
   - component: {fileID: 2914408926810124315}
-  - component: {fileID: 3413438292371964585}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -146,6 +145,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8537899225922042672}
+  - {fileID: 8843251703012025714}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 21.81, y: 0, z: 0}
 --- !u!114 &2914408926810124315
@@ -155,18 +155,51 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2632368193095334525}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef6f813729b46d046964ef0275804077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameHazard
---- !u!136 &3413438292371964585
+--- !u!1 &3479386761295174461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8843251703012025714}
+  - component: {fileID: 8884451248919019249}
+  - component: {fileID: 8812437242291398453}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8843251703012025714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479386761295174461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.25553015, y: 0, z: 0, w: 0.9668011}
+  m_LocalPosition: {x: 0, y: 0.512, z: -1.427}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5194166342625367413}
+  m_LocalEulerAnglesHint: {x: 29.61, y: 0, z: 0}
+--- !u!136 &8884451248919019249
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2632368193095334525}
+  m_GameObject: {fileID: 3479386761295174461}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -179,7 +212,19 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.47623086
-  m_Height: 2.8083398
+  m_Radius: 0.2782877
+  m_Height: 3.1963973
   m_Direction: 1
-  m_Center: {x: -0.007951901, y: -0.027002372, z: 0}
+  m_Center: {x: 0.03144217, y: 0.085038416, z: 0.0655825}
+--- !u!114 &8812437242291398453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479386761295174461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6f813729b46d046964ef0275804077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlameHazard
