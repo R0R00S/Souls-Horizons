@@ -11,7 +11,7 @@ public class InputManager : MonoBehaviour
 
     // Drag plane height — set this to match your floor's Y position
     // No separate liftHeight needed anymore, animation handles visual displacement
-    private float dragPlaneHeight = -0.4f;
+    private float dragPlaneHeight = 1.4f;
 
     [Header("Drag Bounds — set to match your map edges")]
     public float boundsMinX = -5f;
