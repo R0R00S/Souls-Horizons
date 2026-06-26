@@ -5,11 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_GameloopTest/Chris_StartScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/Chris_Scenes/Chris_StartScreen.unity
     guid: 123b254b975994045b476277eb77570a
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_GameloopTest/Chris_LevelSelect.unity
+  - enabled: 1
+    path: Assets/Scenes/Chris_Scenes/Chris_LevelSelect.unity
     guid: 06a43f361b3f706419623e73e3165f7d
   - enabled: 0
     path: Assets/Scenes/Chris_Scenes/Chris_GameloopTest/Chris_Level1.unity
@@ -20,9 +20,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Chris_Scenes/Chris_GameloopTest/Chris_Level3.unity
     guid: 72d68e475a0f2c5468ed66be1263cee1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Robin_Prototype.unity
     guid: 48460edec0276e844ba255d9dd8e66e7
+  - enabled: 1
+    path: Assets/Scenes/Chris_Scenes/Chris_Prototype1.unity
+    guid: 82959b1afbb0cec48a04566e1c99cb0c
+  - enabled: 1
+    path: Assets/Scenes/Chris_Scenes/Chris_Prototype2.unity
+    guid: 2701e1058859a974da2f1fd3ce9061fb
+  - enabled: 1
+    path: Assets/Scenes/Chris_Scenes/Chris_Prototype3.unity
+    guid: fde023d01002bf843909180517a33679
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

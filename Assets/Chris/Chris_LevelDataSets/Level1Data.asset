@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4256901e2d2a45748984f0306bad14b3, type: 3}
   m_Name: level1Data
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneName: Chris_Level1
+  sceneName: Chris_Prototype1
   levelDuration: 60
   beltSpeed: 1.5
   minSpawnInterval: 1
@@ -27,14 +27,6 @@ MonoBehaviour:
   typeDChance: 18
   urgencyTimeThreshold: 5
   urgencySpeedMultiplier: 1.2
-  flameMinSpawnInterval: 11.34
-  flameMaxSpawnInterval: 38
-  maxActiveFlames: 0
-  flameStartSize: 8.05
-  flameExplodeSize: 15.1
-  flameExtinguishSize: 2
-  flameGrowthRate: 0.5
-  flameShrinkRate: 2
   pitSpawnActivationTime: 15
   pitMinSpawnInterval: 3
   pitMaxSpawnInterval: 6
