@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject winScreen;
 
+    [Header("Win Screen")]
+    public TextMeshProUGUI winScoreText; // drag in Inspector
+
     private Camera cam;
 
     [Header("Pause")]
@@ -21,6 +25,12 @@ public class UIManager : MonoBehaviour
     public GameObject pauseButton; // the in-game pause button on the HUD
 
     private bool isPaused = false;
+
+    [Header("Time Modifier Notification")]
+    public TextMeshProUGUI timeModifierText;  // small text sitting below the timer
+    public float timeModifierDisplayDuration = 1.2f;
+
+    private Coroutine timeModifierCoroutine;
 
     void Awake()
     {
@@ -55,9 +65,12 @@ public class UIManager : MonoBehaviour
         if (gameOverScreen != null) gameOverScreen.SetActive(true);
     }
 
-    public void ShowWinScreen()
+    public void ShowWinScreen(int score)
     {
         if (winScreen != null) winScreen.SetActive(true);
+
+        if (winScoreText != null)
+            winScoreText.text = "Score: " + score;
     }
 
     public void OnPausePressed()
@@ -132,4 +145,29 @@ public class UIManager : MonoBehaviour
         // Since LevelSelectUI is in a different scene, store level order on SceneLoader instead
         return SceneLoader.Instance.GetNextLevel();
     }
+
+    public void ShowTimeModifierNotification(string text)
+{
+    if (timeModifierText == null) return;
+
+    // Cancel any currently showing notification before starting a new one
+    if (timeModifierCoroutine != null)
+        StopCoroutine(timeModifierCoroutine);
+
+    timeModifierCoroutine = StartCoroutine(ShowTimeModifier(text));
+}
+
+IEnumerator ShowTimeModifier(string text)
+{
+    timeModifierText.text = text;
+    timeModifierText.gameObject.SetActive(true);
+
+    // Optional: color code — red for punishment, green for reward
+    timeModifierText.color = text.StartsWith("+") ? Color.red : Color.green;
+
+    yield return new WaitForSecondsRealtime(timeModifierDisplayDuration);
+
+    timeModifierText.gameObject.SetActive(false);
+    timeModifierCoroutine = null;
+}
 }

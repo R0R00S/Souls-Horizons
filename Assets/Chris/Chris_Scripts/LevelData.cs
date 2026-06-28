@@ -25,7 +25,20 @@ public class LevelData : ScriptableObject
     [Range(0, 100)] public int typeCChance = 0;
     [Range(0, 100)] public int typeDChance = 0;
 
-    // In LevelData.cs add:
+    [Header("Time Cap")]
+    [Tooltip("Maximum seconds the timer can reach including penalties. Set to 0 for no cap.")]
+    public float maxTimeCap = 0f; // 0 means uncapped by default
+
+    [Header("Scoring")]
+    [Tooltip("Starting score before any penalties")]
+    public int baseScore = 1000;
+
+    [Tooltip("Score lost per extra second added to the timer beyond the starting duration")]
+    public int scoreLostPerPenaltySecond = 5;
+
+    [Tooltip("Score lost per life lost. Index 0 = first life lost, index 1 = second life lost")]
+    public int[] scoreLostPerLife = { 100, 300 };
+
     [Header("Difficulty Ramp")]
     [Tooltip("Urgency speed boost kicks in when time remaining drops below this value")]
     public float urgencyTimeThreshold = 20f;
@@ -41,6 +54,10 @@ public class LevelData : ScriptableObject
 
     [Header("Dialogue")]
     public LevelDialogueData dialogueData; // optional — leave empty for no dialogue
+
+    [Header("Flame Penalty")]
+    [Tooltip("Seconds added to the timer when a soul touches a flame")]
+    public float flamePenaltySeconds = 10f;
 
     void OnValidate()
     {
