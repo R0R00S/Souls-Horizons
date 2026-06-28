@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9189971296050316954}
   - component: {fileID: 8847257265119134542}
   - component: {fileID: 3343464165898855665}
-  - component: {fileID: 254957521213573199}
   m_Layer: 0
   m_Name: Pit_A
   m_TagString: Untagged
@@ -28,13 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930152152175563262}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.82, y: -2.21, z: -1.7449}
-  m_LocalScale: {x: 4.375367, y: 4.3700943, z: 4.375367}
+  m_LocalScale: {x: 5.544403, y: 5.5377216, z: 5.544403}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6841251708832104556}
   - {fileID: 8197777856752702439}
+  - {fileID: 7376122847242706229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9189971296050316954
@@ -107,13 +107,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PitTarget
   acceptedBoxType: 1
---- !u!114 &254957521213573199
+--- !u!1 &2335413279332604251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7376122847242706229}
+  - component: {fileID: 6447540596530974006}
+  m_Layer: 0
+  m_Name: SpawnerA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7376122847242706229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2335413279332604251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.207, y: 0.64, z: 0.247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7283242830815419545}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6447540596530974006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930152152175563262}
+  m_GameObject: {fileID: 2335413279332604251}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a484bce38756f84785089902131beb3, type: 3}
@@ -137,7 +169,7 @@ GameObject:
   - component: {fileID: 3686636001355593375}
   - component: {fileID: 4879205142710714401}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: BlueGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 2526622129210196279}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071069, y: -0.00000004470348, z: -0.000000029802319, w: 0.70710677}
-  m_LocalPosition: {x: -13.862836, y: -2.2031825, z: 53.21377}
+  m_LocalPosition: {x: -7, y: 6, z: 3}
   m_LocalScale: {x: 20.441288, y: 20.465948, z: 20.441286}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -416,7 +448,8 @@ PrefabInstance:
       value: Pit (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9207823287918804825, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 140474223415583462, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
       insertIndex: -1

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7540145075287599138}
   - component: {fileID: 3123026346853073363}
   - component: {fileID: 848475148609185348}
-  - component: {fileID: 7737877928031396316}
   m_Layer: 0
   m_Name: Pit_D
   m_TagString: Untagged
@@ -28,13 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98901012191155644}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.150003, y: -2.21, z: -1.7449}
-  m_LocalScale: {x: 4.375367, y: 4.3700943, z: 4.375367}
+  m_LocalScale: {x: 5.544403, y: 5.5377216, z: 5.544403}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1850102910871731181}
   - {fileID: 3089126836525097062}
+  - {fileID: 4126054529655641445}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7540145075287599138
@@ -107,23 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PitTarget
   acceptedBoxType: 4
---- !u!114 &7737877928031396316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98901012191155644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a484bce38756f84785089902131beb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PitSpawner
-  activationTimeOverride: -1
-  minIntervalOverride: -1
-  maxIntervalOverride: -1
-  spawnedSoulType: 4
-  customTarget: {fileID: 0}
 --- !u!1 &3503901247871844903
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +233,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PitTarget
   acceptedBoxType: 4
+--- !u!1 &8649843789953962226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4126054529655641445}
+  - component: {fileID: 5728007389226939842}
+  m_Layer: 0
+  m_Name: SpawnerD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4126054529655641445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8649843789953962226}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.081, y: 0.73209566, z: 0.247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5323160440248243885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5728007389226939842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8649843789953962226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a484bce38756f84785089902131beb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PitSpawner
+  activationTimeOverride: -1
+  minIntervalOverride: -1
+  maxIntervalOverride: -1
+  spawnedSoulType: 4
+  customTarget: {fileID: 0}
 --- !u!1001 &1756388754821749003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,16 +339,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: cc9394197b09a00499cdd171f3f0160a, type: 2}
     - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18.257557
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 18.257559
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 18.257557
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.6
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207823287918804825, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_Name
+      value: YellowGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

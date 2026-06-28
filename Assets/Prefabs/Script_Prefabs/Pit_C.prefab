@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 1465512359107082533}
   - component: {fileID: 5227033412015087794}
   - component: {fileID: 1795457687074464233}
-  - component: {fileID: 8537523749283977872}
   m_Layer: 0
   m_Name: Pit_C
   m_TagString: Untagged
@@ -154,13 +153,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4945176727358076219}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.849997, y: -2.21, z: -1.7449}
-  m_LocalScale: {x: 4.375367, y: 4.3700943, z: 4.375367}
+  m_LocalScale: {x: 5.544403, y: 5.5377216, z: 5.544403}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1714463040881908059}
   - {fileID: 6521786057419517519}
+  - {fileID: 7065428739387402747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1465512359107082533
@@ -233,13 +233,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PitTarget
   acceptedBoxType: 3
---- !u!114 &8537523749283977872
+--- !u!1 &5323139559219611903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7065428739387402747}
+  - component: {fileID: 2330210648424938616}
+  m_Layer: 0
+  m_Name: SpawnerC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7065428739387402747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323139559219611903}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.092, y: 0.73209566, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5321980274552397303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2330210648424938616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4945176727358076219}
+  m_GameObject: {fileID: 5323139559219611903}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a484bce38756f84785089902131beb3, type: 3}
@@ -307,8 +339,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 00af22f175836a644b66eb9388d4bc26, type: 2}
     - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18.576538
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 18.57654
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 18.576538
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634895498899672369, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207823287918804825, guid: 43d40725c81762e47b0faf15f9843533, type: 3}
+      propertyPath: m_Name
+      value: RedGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
