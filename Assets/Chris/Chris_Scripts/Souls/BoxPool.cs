@@ -37,7 +37,7 @@ public class BoxPool : MonoBehaviour
     {
         if (!pools.ContainsKey(type) || pools[type].Count == 0)
         {
-            Debug.LogWarning("Pool empty for type: " + type);
+            
             return null;
         }
 

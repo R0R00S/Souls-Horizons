@@ -68,7 +68,7 @@ public class BoxSpawner : MonoBehaviour
         activeBoxCount++;
         StartCoroutine(MoveAlongBelt(box));
 
-        Debug.Log("Spawned box type: " + chosenType);
+        
     }
 
     BoxType PickBoxType()

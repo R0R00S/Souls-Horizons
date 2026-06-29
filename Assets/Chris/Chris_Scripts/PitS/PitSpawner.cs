@@ -47,7 +47,7 @@ public class PitSpawner : MonoBehaviour
             if (GameManager.Instance.timeElapsed >= activationTime)
             {
                 isActive = true;
-                Debug.Log(gameObject.name + " pit spawner activated");
+                
             }
             return; // not active yet, don't count down spawn timer
         }
@@ -78,7 +78,7 @@ public class PitSpawner : MonoBehaviour
         GameObject soul = BoxPool.Instance.GetBox(spawnedSoulType, spawnPos);
         if (soul == null)
         {
-            Debug.LogWarning("Pool empty for type: " + spawnedSoulType + " from pit spawner");
+            
             return;
         }
 
@@ -90,7 +90,7 @@ public class PitSpawner : MonoBehaviour
         // Start moving toward the gate
         StartCoroutine(MoveTowardGate(soul));
 
-        Debug.Log(gameObject.name + " spawned soul of type: " + spawnedSoulType);
+        
     }
 
     IEnumerator MoveTowardGate(GameObject soul)
@@ -101,7 +101,7 @@ public class PitSpawner : MonoBehaviour
 
         if (target == null)
         {
-            Debug.LogWarning("PitSpawner has no target to move toward");
+            
             yield break;
         }
 

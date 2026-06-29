@@ -61,7 +61,7 @@ public class InputManager : MonoBehaviour
                 }
 
                 heldBox.GetComponent<BoxDraggable>().OnPickUp();
-                Debug.Log("Grabbed: " + heldBox.name);
+                
             }
         }
     }
