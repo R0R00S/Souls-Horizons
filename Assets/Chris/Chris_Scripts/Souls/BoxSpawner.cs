@@ -154,4 +154,11 @@ public class BoxSpawner : MonoBehaviour
     {
         return currentBeltSpeed;
     }
+
+    public Vector3 GetSpawnPosition()
+    {
+        Vector3 pos = spawnPoint.position;
+        pos.x += Random.Range(-0.3f, 0.3f);
+        return pos;
+    }
 }

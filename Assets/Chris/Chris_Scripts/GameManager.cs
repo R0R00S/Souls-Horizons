@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
         // currentLevel might already be assigned in the Inspector as a fallback
         // for when you start directly from this scene in the Editor
         if (currentLevel == null)
+        {
+            Debug.LogError("No LevelData assigned anywhere. Assign one in the Inspector.");
+            return;
+        }
 
         timeRemaining = currentLevel.levelDuration;
     }
@@ -89,11 +93,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
         
-
-        // Stop all pit spawners
+        TimeSoulSpawner.Instance.StopSpawning(); // add this
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
             ps.StopSpawning();
-
         UIManager.Instance.ShowGameOverScreen();
     }
 
@@ -103,10 +105,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
         
-
+        TimeSoulSpawner.Instance.StopSpawning(); // add this
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
             ps.StopSpawning();
-
         int finalScore = CalculateFinalScore();
         UIManager.Instance.ShowWinScreen(finalScore);
     }

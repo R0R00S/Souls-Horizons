@@ -59,6 +59,23 @@ public class LevelData : ScriptableObject
     [Tooltip("Seconds added to the timer when a soul touches a flame")]
     public float flamePenaltySeconds = 10f;
 
+    [Header("Time Soul Settings")]
+    [Tooltip("Minimum seconds elapsed before first time soul can spawn")]
+    public float timeSoulMinSpawnWindow = 15f;
+    [Tooltip("Maximum seconds elapsed before first time soul must spawn")]
+    public float timeSoulMaxSpawnWindow = 35f;
+    [Tooltip("How much faster the time soul moves compared to regular belt speed")]
+    public float timeSoulSpeedMultiplier = 2.2f;
+    [Tooltip("Seconds added to timer if time soul reaches the gate")]
+    public float timeSoulPenaltySeconds = 20f;
+    [Tooltip("Seconds removed from timer if player sorts time soul correctly")]
+    public float timeSoulRewardSeconds = 10f;
+    [Tooltip("After resolving a time soul, minimum seconds before another can spawn")]
+    public float timeSoulCooldownMin = 20f;
+    [Tooltip("After resolving a time soul, maximum seconds before another can spawn")]
+    public float timeSoulCooldownMax = 40f;
+
+
     void OnValidate()
     {
         if (urgencyTimeThreshold >= levelDuration)
