@@ -64,7 +64,7 @@ public class LevelData : ScriptableObject
         if (urgencyTimeThreshold >= levelDuration)
         {
             urgencyTimeThreshold = levelDuration * 0.25f;
-            Debug.LogWarning(name + ": urgencyTimeThreshold was longer than the level, auto-corrected.");
+            
         }
 
         if (pitSpawnActivationTime >= levelDuration)

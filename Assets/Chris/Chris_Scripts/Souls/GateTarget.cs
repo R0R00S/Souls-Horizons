@@ -13,12 +13,12 @@ public class GateTarget : MonoBehaviour
 
         if (box.boxType == BoxType.None)
         {
-            Debug.Log("Safe box passed through gate correctly.");
+            
             GameManager.Instance.CorrectPit(other.gameObject);
         }
         else
         {
-            Debug.Log($"Wrong box ({box.boxType}) reached the gate — lose a life.");
+            
             GameManager.Instance.WrongPit();
             BoxPool.Instance.ReturnBox(other.gameObject);
             BoxSpawner.Instance.BoxSorted();

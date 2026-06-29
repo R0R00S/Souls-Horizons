@@ -49,8 +49,8 @@ public class DialogueManager : MonoBehaviour
         ShowCurrentLine();
 
         dialoguePanel.SetActive(true);
-        Debug.Log("activeSelf: " + dialoguePanel.activeSelf +
-                  " | activeInHierarchy: " + dialoguePanel.activeInHierarchy);
+        // Debug.Log("activeSelf: " + dialoguePanel.activeSelf +
+                 // " | activeInHierarchy: " + dialoguePanel.activeInHierarchy);
     }
 
     void ShowCurrentLine()

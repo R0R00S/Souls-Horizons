@@ -9,7 +9,7 @@ public class FlameHazard : MonoBehaviour
         if (box == null) return;
         if (!box.isBeingHeld) return;
 
-        Debug.Log("Soul touched flame — time penalty applied");
+        
 
         // Force release and remove the soul
         InputManager.Instance.ForceRelease();

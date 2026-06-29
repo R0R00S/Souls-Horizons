@@ -24,13 +24,13 @@ public class AudioManager : MonoBehaviour
 
     public void PlayLoseLife()
     {
-        Debug.Log("PlayLoseLife called");
+        // Debug.Log("PlayLoseLife called");
         PlayOneShot(loseLifeSfx);
     }
 
     public void PlayPickupSoul()
     {
-        Debug.Log("PlayPickupSoul called, event null? " + pickupSoulSfx.IsNull);
+        //Debug.Log("PlayPickupSoul called, event null? " + pickupSoulSfx.IsNull);
         PlayOneShot(pickupSoulSfx);
     }
 

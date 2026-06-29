@@ -30,15 +30,6 @@ public class GameManager : MonoBehaviour
         // currentLevel might already be assigned in the Inspector as a fallback
         // for when you start directly from this scene in the Editor
         if (currentLevel == null)
-        {
-            Debug.LogWarning("No LevelData from SceneLoader — using Inspector fallback.");
-        }
-
-        if (currentLevel == null)
-        {
-            Debug.LogError("No LevelData assigned anywhere. Assign one in the Inspector.");
-            return;
-        }
 
         timeRemaining = currentLevel.levelDuration;
     }
@@ -80,7 +71,7 @@ public class GameManager : MonoBehaviour
         lives--;
         livesLost++;
         UIManager.Instance.UpdateLives(lives);
-        Debug.Log("Wrong pit! Lives remaining: " + lives);
+        
 
         if (lives <= 0)
             GameOver();
@@ -88,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void CorrectPit(GameObject box)
     {
-        Debug.Log("Correct!");
+        
         BoxSpawner.Instance.BoxSorted();
         BoxPool.Instance.ReturnBox(box);
     }
@@ -136,7 +127,7 @@ public class GameManager : MonoBehaviour
 
         // Optional: trigger your door opening animation here before setting isGameActive
         // For now just starts immediately
-        Debug.Log("Level started");
+        
     }
 
     private int notificationCheckIndex = 0;
@@ -187,7 +178,7 @@ public class GameManager : MonoBehaviour
         string prefix = seconds > 0 ? "+" : "";
         UIManager.Instance.ShowTimeModifierNotification(prefix + Mathf.RoundToInt(seconds) + "s");
 
-        Debug.Log("Time modified by " + seconds + "s. Remaining: " + timeRemaining);
+        
     }
 
     //GameManager.Instance.ModifyTime(-5f); // removes 5 seconds, shows "-5s" in green

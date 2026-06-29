@@ -41,7 +41,7 @@ public class BoxDraggable : MonoBehaviour
         if (visualAnimator != null)
         {
             visualAnimator.SetBool("IsHeld", true);
-            Debug.Log("IsHeld set to true, animator state: " + visualAnimator.GetCurrentAnimatorStateInfo(0).IsName("BoxPickedUp"));
+            
         }
     }
 
