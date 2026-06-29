@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 839f77d91ba669b4e85c28f9c6381e70
+guid: a349bbe604418324c92915fb754b7a5c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,29 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: SideBarV2_0
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 82
-        width: 409
-        height: 613
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a12ad1f5b020eab498eb26ae02d2f002
-      internalID: -918179780
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
@@ -144,8 +122,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SideBarV2_0: -918179780
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
