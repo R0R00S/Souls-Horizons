@@ -24,8 +24,9 @@ public class DialogueSequence
 [System.Serializable]
 public class LevelNotification
 {
-    [Tooltip("Time elapsed in seconds when this notification appears")]
-    public float triggerAtTime = 30f;
+    [Tooltip("Notification appears when the timer reaches this many seconds remaining. " +
+             "e.g. set to 30 to show when countdown hits 30")]
+    public float triggerAtTimeRemaining = 30f;
 
     [TextArea(2, 4)]
     public string message;

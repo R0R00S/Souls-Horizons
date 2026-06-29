@@ -17,4 +17,10 @@ MonoBehaviour:
     lines:
     - Level 3 YES
     - GOOD LUCK
-  notifications: []
+  notifications:
+  - triggerAtTime: 0
+    message: 'quick note
+
+'
+    displayDuration: 0
+    hasTriggered: 0

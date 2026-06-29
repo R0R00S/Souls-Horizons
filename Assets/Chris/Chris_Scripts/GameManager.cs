@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     private int lastDisplayedSecond = -1;
 
+    private float totalPenaltySeconds = 0f; // accumulates every time ModifyTime is called
+    private int livesLost = 0;              // increments in WrongPit
+
     void Awake()
     {
         Instance = this;
@@ -75,6 +78,7 @@ public class GameManager : MonoBehaviour
     public void WrongPit()
     {
         lives--;
+        livesLost++;
         UIManager.Instance.UpdateLives(lives);
         Debug.Log("Wrong pit! Lives remaining: " + lives);
 
@@ -112,7 +116,8 @@ public class GameManager : MonoBehaviour
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
             ps.StopSpawning();
 
-        UIManager.Instance.ShowWinScreen();
+        int finalScore = CalculateFinalScore();
+        UIManager.Instance.ShowWinScreen(finalScore);
     }
 
     public void Retry()
@@ -134,21 +139,84 @@ public class GameManager : MonoBehaviour
         Debug.Log("Level started");
     }
 
+    private int notificationCheckIndex = 0;
+
     void CheckNotifications()
     {
         if (currentLevel.dialogueData == null) return;
 
-        foreach (LevelNotification notification in currentLevel.dialogueData.notifications)
+        var notifications = currentLevel.dialogueData.notifications;
+        if (notificationCheckIndex >= notifications.Count) return;
+
+        for (int i = notificationCheckIndex; i < notifications.Count; i++)
         {
-            if (!notification.hasTriggered && timeElapsed >= notification.triggerAtTime)
+            LevelNotification notification = notifications[i];
+
+            if (timeRemaining <= notification.triggerAtTimeRemaining)
             {
                 notification.hasTriggered = true;
+                notificationCheckIndex++;
                 NotificationManager.Instance.ShowNotification(
                     notification.message,
                     notification.displayDuration
                 );
             }
+            else
+            {
+                break;
+            }
         }
+    }
+
+    // Positive value = punishment (adds time), negative value = reward (removes time)
+    public void ModifyTime(float seconds)
+    {
+        timeRemaining += seconds;
+
+        // Track penalty seconds for scoring — only count positive additions
+        if (seconds > 0)
+            totalPenaltySeconds += seconds;
+
+        // Apply cap only if maxTimeCap is set (non-zero)
+        if (currentLevel.maxTimeCap > 0f)
+            timeRemaining = Mathf.Min(timeRemaining, currentLevel.maxTimeCap);
+
+        // Force immediate display refresh
+        lastDisplayedSecond = -1;
+
+        string prefix = seconds > 0 ? "+" : "";
+        UIManager.Instance.ShowTimeModifierNotification(prefix + Mathf.RoundToInt(seconds) + "s");
+
+        Debug.Log("Time modified by " + seconds + "s. Remaining: " + timeRemaining);
+    }
+
+    //GameManager.Instance.ModifyTime(-5f); // removes 5 seconds, shows "-5s" in green
+    // For when adding rewards
+
+
+    public int CalculateFinalScore()
+    {
+        int score = currentLevel.baseScore;
+
+        // Deduct for penalty seconds
+        int penaltyFromTime = Mathf.RoundToInt(totalPenaltySeconds)
+                              * currentLevel.scoreLostPerPenaltySecond;
+        score -= penaltyFromTime;
+
+        // Deduct per life lost using the array — index 0 = first life, index 1 = second life
+        int[] lifePenalties = currentLevel.scoreLostPerLife;
+        for (int i = 0; i < livesLost && i < lifePenalties.Length; i++)
+        {
+            score -= lifePenalties[i];
+        }
+
+        // Don't go below zero
+        score = Mathf.Max(0, score);
+
+        Debug.Log($"Final score: {score} " +
+                  $"(penalty seconds: {totalPenaltySeconds}, lives lost: {livesLost})");
+
+        return score;
     }
 
 }
