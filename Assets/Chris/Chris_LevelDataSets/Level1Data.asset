@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4256901e2d2a45748984f0306bad14b3, type: 3}
   m_Name: level1Data
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneName: Chris_Prototype1
+  sceneName: Main_Scene
   levelDuration: 60
   beltSpeed: 1.5
   minSpawnInterval: 1

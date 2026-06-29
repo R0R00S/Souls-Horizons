@@ -15,8 +15,13 @@ MonoBehaviour:
   openingSequence:
     enabled: 1
     lines:
-    - 'Welcome, your job is to sort out souls to the pit they belong to.
-
-'
-    - Dont forget to let the pure souls pass though.
-  notifications: []
+    - Hi, you wayward soul! The kings three that judge the damned are currently indisposed
+      so you will need to step in.
+    - The job is simple. Sort the ouls based on the color of their sin. But dont
+      forget to let the pure souls pass onto Elysium or lord Hades will be very mad.
+    - Good luck!
+  notifications:
+  - triggerAtTime: 15
+    message: Oh no! the souls are escaping their pits! Drag them back in!
+    displayDuration: 0
+    hasTriggered: 0
