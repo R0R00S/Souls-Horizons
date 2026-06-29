@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [Header("HUD")]
     public TextMeshProUGUI timerText;
     public Image[] lifeIcons;
+    public GameObject hudCanvas; // drag your HUD Canvas here in Inspector
 
     [Header("Screens")]
     public GameObject gameOverScreen;
@@ -81,12 +82,14 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 0;
             pausePanel.SetActive(true);
+            if (hudCanvas != null) hudCanvas.SetActive(false);
             GameManager.Instance.isGameActive = false;
         }
         else
         {
             Time.timeScale = 1;
             pausePanel.SetActive(false);
+            if (hudCanvas != null) hudCanvas.SetActive(true);
             GameManager.Instance.isGameActive = true;
         }
     }
@@ -115,7 +118,7 @@ public class UIManager : MonoBehaviour
         SceneLoader.Instance.ReloadCurrentLevel();
     }
 
-    // New — hook to Next Level button on win screen
+    // New â€” hook to Next Level button on win screen
     public void OnNextLevelPressed()
     {
         LevelData next = GetNextLevel();
@@ -139,7 +142,7 @@ public class UIManager : MonoBehaviour
 
     LevelData GetNextLevel()
     {
-        // SceneLoader knows which level was loaded — ask it for the next one
+        // SceneLoader knows which level was loaded â€” ask it for the next one
         LevelSelectUI levelSelect = FindObjectOfType<LevelSelectUI>();
 
         // Since LevelSelectUI is in a different scene, store level order on SceneLoader instead
@@ -147,27 +150,27 @@ public class UIManager : MonoBehaviour
     }
 
     public void ShowTimeModifierNotification(string text)
-{
-    if (timeModifierText == null) return;
+    {
+        if (timeModifierText == null) return;
 
-    // Cancel any currently showing notification before starting a new one
-    if (timeModifierCoroutine != null)
-        StopCoroutine(timeModifierCoroutine);
+        // Cancel any currently showing notification before starting a new one
+        if (timeModifierCoroutine != null)
+            StopCoroutine(timeModifierCoroutine);
 
-    timeModifierCoroutine = StartCoroutine(ShowTimeModifier(text));
-}
+        timeModifierCoroutine = StartCoroutine(ShowTimeModifier(text));
+    }
 
-IEnumerator ShowTimeModifier(string text)
-{
-    timeModifierText.text = text;
-    timeModifierText.gameObject.SetActive(true);
+    IEnumerator ShowTimeModifier(string text)
+    {
+        timeModifierText.text = text;
+        timeModifierText.gameObject.SetActive(true);
 
-    // Optional: color code — red for punishment, green for reward
-    timeModifierText.color = text.StartsWith("+") ? Color.red : Color.green;
+        // Optional: color code â€” red for punishment, green for reward
+        timeModifierText.color = text.StartsWith("+") ? Color.red : Color.green;
 
-    yield return new WaitForSecondsRealtime(timeModifierDisplayDuration);
+        yield return new WaitForSecondsRealtime(timeModifierDisplayDuration);
 
-    timeModifierText.gameObject.SetActive(false);
-    timeModifierCoroutine = null;
-}
+        timeModifierText.gameObject.SetActive(false);
+        timeModifierCoroutine = null;
+    }
 }
