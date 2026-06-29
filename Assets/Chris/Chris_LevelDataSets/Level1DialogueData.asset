@@ -19,4 +19,8 @@ MonoBehaviour:
 
 '
     - Dont forget to let the pure souls pass though.
-  notifications: []
+  notifications:
+  - triggerAtTime: 50
+    message: 'pop up after 30 seconds or at 30 '
+    displayDuration: 0
+    hasTriggered: 1

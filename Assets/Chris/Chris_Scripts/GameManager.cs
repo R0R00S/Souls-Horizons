@@ -139,19 +139,31 @@ public class GameManager : MonoBehaviour
         Debug.Log("Level started");
     }
 
+    private int notificationCheckIndex = 0;
+
     void CheckNotifications()
     {
         if (currentLevel.dialogueData == null) return;
 
-        foreach (LevelNotification notification in currentLevel.dialogueData.notifications)
+        var notifications = currentLevel.dialogueData.notifications;
+        if (notificationCheckIndex >= notifications.Count) return;
+
+        for (int i = notificationCheckIndex; i < notifications.Count; i++)
         {
-            if (!notification.hasTriggered && timeElapsed >= notification.triggerAtTime)
+            LevelNotification notification = notifications[i];
+
+            if (timeRemaining <= notification.triggerAtTimeRemaining)
             {
                 notification.hasTriggered = true;
+                notificationCheckIndex++;
                 NotificationManager.Instance.ShowNotification(
                     notification.message,
                     notification.displayDuration
                 );
+            }
+            else
+            {
+                break;
             }
         }
     }
