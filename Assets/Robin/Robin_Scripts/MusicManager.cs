@@ -10,7 +10,10 @@ public class MusicManager : MonoBehaviour
     [SerializeField] EventReference gameplayMusicEvent;
 
     [Header("Parameter")]
-    [SerializeField] string progressionParam = "MusicState"; // match exact FMOD parameter name
+    [SerializeField] string progressionParam = "MusicProgression";
+
+    [Header("Starting State")]
+    [SerializeField] string startingLabel = "Value A"; // type exact label name here
 
     EventInstance musicInstance;
 
@@ -29,12 +32,13 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         musicInstance = RuntimeManager.CreateInstance(gameplayMusicEvent);
+        musicInstance.setParameterByNameWithLabel(progressionParam, startingLabel);
         musicInstance.start();
     }
 
-    public void SetMusicState(float value)
+    public void SetMusicState(string label)
     {
-        musicInstance.setParameterByName(progressionParam, value);
+        musicInstance.setParameterByNameWithLabel(progressionParam, label);
     }
 
     void OnDestroy()

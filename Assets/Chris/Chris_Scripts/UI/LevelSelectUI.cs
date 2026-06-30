@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LevelSelectUI : MonoBehaviour
 {
-    [Header("Level Data Assets — drag from Project window")]
+    [Header("Level Data Assets â€” drag from Project window")]
     public LevelData level1Data;
     public LevelData level2Data;
     public LevelData level3Data;
@@ -11,21 +11,25 @@ public class LevelSelectUI : MonoBehaviour
 
     public void OnLevel1Pressed()
     {
+        AudioManager.Instance.PlayLevelSelect();
         SceneLoader.Instance.LoadLevel(level1Data);
     }
 
     public void OnLevel2Pressed()
     {
+        AudioManager.Instance.PlayLevelSelect();
         SceneLoader.Instance.LoadLevel(level2Data);
     }
 
     public void OnLevel3Pressed()
     {
+        AudioManager.Instance.PlayLevelSelect();
         SceneLoader.Instance.LoadLevel(level3Data);
     }
 
     public void OnBackPressed()
     {
+        AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToMainMenu();
     }
 }

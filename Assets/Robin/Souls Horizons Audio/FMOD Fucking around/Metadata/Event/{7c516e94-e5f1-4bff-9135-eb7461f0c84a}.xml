@@ -76,6 +76,7 @@
 		<relationship name="markers">
 			<destination>{1f36b4a0-75b1-4734-a929-103fc147f793}</destination>
 			<destination>{e333d50c-38c5-4868-a007-6e049fa01a99}</destination>
+			<destination>{5718d95b-c5f0-4d7e-be18-e178090bf383}</destination>
 		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{d3f2e7bd-fef5-468a-8a26-d20def7d6aeb}">
@@ -165,6 +166,32 @@
 			<destination>{90a58e86-24a0-41b5-b8da-12dc978f6453}</destination>
 		</relationship>
 	</object>
+	<object class="LoopRegion" id="{5718d95b-c5f0-4d7e-be18-e178090bf383}">
+		<property name="position">
+			<value>98.461538461538467</value>
+		</property>
+		<property name="length">
+			<value>9.2307692307692335</value>
+		</property>
+		<property name="quantizationInterval">
+			<value>2</value>
+		</property>
+		<property name="transitionOffset">
+			<value>1</value>
+		</property>
+		<property name="looping">
+			<value>2</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{c580221a-56e3-4014-848d-c7621845a5e2}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{41d7d9c3-1c48-4c67-a750-b5e09fc82025}</destination>
+		</relationship>
+		<relationship name="triggerConditions">
+			<destination>{4641087b-81b1-468e-8177-f58fb54e57ce}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{4cb6ed61-24ab-4ade-9d51-dbe48a980416}">
 		<relationship name="effects">
 			<destination>{d028bb0b-c5aa-4219-9f82-a099c08e931f}</destination>
@@ -184,6 +211,17 @@
 		</property>
 		<property name="maximum">
 			<value>0</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{e98ad809-2529-4275-8861-70704770444b}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{4641087b-81b1-468e-8177-f58fb54e57ce}">
+		<property name="minimum">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>1</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{e98ad809-2529-4275-8861-70704770444b}</destination>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{02e6394c-87c6-4da2-ab65-d44efeb8d81d}">
+		<property name="assetPath">
+			<value>ButtonClick4.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.39066666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e414f070-91b6-424f-ab31-7140530e1d9d}</destination>
+		</relationship>
+	</object>
+</objects>

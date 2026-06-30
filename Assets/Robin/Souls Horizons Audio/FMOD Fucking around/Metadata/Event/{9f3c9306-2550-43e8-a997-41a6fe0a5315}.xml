@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9f3c9306-2550-43e8-a997-41a6fe0a5315}">
 		<property name="name">
-			<value>LoseLife</value>
+			<value>SoulDissapear</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{ad832ef8-70e3-41e9-ad72-eed119e719e0}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

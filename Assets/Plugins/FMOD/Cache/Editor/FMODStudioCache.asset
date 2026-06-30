@@ -74,6 +74,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-7917131797487247187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PaperCrumble
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/PaperCrumble
+  Guid:
+    Data1: -461882710
+    Data2: 1213877088
+    Data3: 1411601831
+    Data4: -1876609544
+  Banks:
+  - {fileID: 5496436038586203639}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1304
 --- !u!114 &-7674012874167258495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,13 +441,14 @@ MonoBehaviour:
   - {fileID: -5542480790080084110}
   - {fileID: 1796730206502701977}
   - {fileID: -1802830620040984148}
+  - {fileID: -7917131797487247187}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8177385402055824317}
   StringsBanks:
   - {fileID: 8088118520599810534}
   cacheVersion: 131860
-  cacheTime: 639184255861316306
+  cacheTime: 639184270658536614
   SerializableEventsDict:
   - key: event:/Southern Gothic
     index: 0
@@ -440,6 +468,8 @@ MonoBehaviour:
     index: 7
   - key: event:/SoulDissapear
     index: 8
+  - key: event:/PaperCrumble
+    index: 9
 --- !u!114 &862395712113035431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,10 +732,10 @@ MonoBehaviour:
   Path: ../../Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Game.bank
   Name: Game
   StudioPath: bank:/Game
-  lastModified: 639184255861316306
+  lastModified: 639184270658461351
   FileSizes:
   - Name: Desktop
-    Value: 10341632
+    Value: 10357952
   Exists: 1
 --- !u!114 &5834850177087603436
 MonoBehaviour:
@@ -776,10 +806,10 @@ MonoBehaviour:
   Path: ../../Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639184252389146211
+  lastModified: 639184270658536614
   FileSizes:
   - Name: Desktop
-    Value: 1234
+    Value: 1288
   Exists: 1
 --- !u!114 &8177385402055824317
 MonoBehaviour:
@@ -796,7 +826,7 @@ MonoBehaviour:
   Path: ../../Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639184252389131183
+  lastModified: 639184270658526543
   FileSizes:
   - Name: Desktop
     Value: 1036

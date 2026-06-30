@@ -3397,7 +3397,8 @@ MonoBehaviour:
       Data3: 1961571729
       Data4: 1254682721
     Path: event:/Darkest Child Var.
-  progressionParam: Value A
+  progressionParam: MusicProgression
+  startingLabel: Value A
 --- !u!4 &861674437
 Transform:
   m_ObjectHideFlags: 0

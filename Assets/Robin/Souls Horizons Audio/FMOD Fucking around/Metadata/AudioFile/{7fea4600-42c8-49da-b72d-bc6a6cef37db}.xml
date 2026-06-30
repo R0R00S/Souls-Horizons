@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7fea4600-42c8-49da-b72d-bc6a6cef37db}">
+		<property name="assetPath">
+			<value>mixkit-hellhound-monster-growl-dog-wolf-creature-3014.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3999999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e414f070-91b6-424f-ab31-7140530e1d9d}</destination>
+		</relationship>
+	</object>
+</objects>

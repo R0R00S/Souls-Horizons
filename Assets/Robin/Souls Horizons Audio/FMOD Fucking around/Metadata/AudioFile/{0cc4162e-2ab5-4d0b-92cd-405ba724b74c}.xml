@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0cc4162e-2ab5-4d0b-92cd-405ba724b74c}">
+		<property name="assetPath">
+			<value>freesound_community-monster-snarl-5-69062.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>18.936</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e414f070-91b6-424f-ab31-7140530e1d9d}</destination>
+		</relationship>
+	</object>
+</objects>

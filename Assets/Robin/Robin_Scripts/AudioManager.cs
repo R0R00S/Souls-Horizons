@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] EventReference dropSoulSfx;
     [SerializeField] EventReference buttonClickSfx;
     [SerializeField] EventReference soulDisappearSfx;
+    [SerializeField] EventReference levelSelectSfx;
 
     void Awake()
     {
@@ -29,6 +30,7 @@ public class AudioManager : MonoBehaviour
     public void PlayDropSoul()       => PlayOneShot(dropSoulSfx);
     public void PlayButtonClick()    => PlayOneShot(buttonClickSfx);
     public void PlaySoulDisappear()  => PlayOneShot(soulDisappearSfx);
+    public void PlayLevelSelect()    => PlayOneShot(levelSelectSfx);
 
     void PlayOneShot(EventReference sfxEvent)
     {
