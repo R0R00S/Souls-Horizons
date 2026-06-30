@@ -25,9 +25,21 @@ MonoBehaviour:
   typeBChance: 21
   typeCChance: 13
   typeDChance: 18
+  maxTimeCap: 0
+  baseScore: 1000
+  scoreLostPerPenaltySecond: 5
+  scoreLostPerLife: 640000002c010000
   urgencyTimeThreshold: 5
   urgencySpeedMultiplier: 1.2
   pitSpawnActivationTime: 15
   pitMinSpawnInterval: 3
   pitMaxSpawnInterval: 6
   dialogueData: {fileID: 11400000, guid: 1fccca30a024cc64889cab24939ae9bf, type: 2}
+  flamePenaltySeconds: 10
+  timeSoulMinSpawnWindow: 15
+  timeSoulMaxSpawnWindow: 35
+  timeSoulSpeedMultiplier: 3
+  timeSoulPenaltySeconds: 20
+  timeSoulRewardSeconds: 10
+  timeSoulCooldownMin: 20
+  timeSoulCooldownMax: 40

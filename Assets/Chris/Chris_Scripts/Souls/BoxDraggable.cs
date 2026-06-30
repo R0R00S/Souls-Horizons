@@ -5,6 +5,7 @@ public class BoxDraggable : MonoBehaviour
 {
     [Header("Box Identity")]
     public BoxType boxType;
+    public bool isTimeSoul = false; // tick this on time soul prefabs in Inspector
 
     [Header("References")]
     public Animator visualAnimator; // drag the Visual child's Animator here in Inspector
@@ -49,8 +50,6 @@ public class BoxDraggable : MonoBehaviour
     {
         isBeingHeld = false;
 
-        AudioManager.Instance.PlayDropSoul();
-
         if (visualAnimator != null)
             visualAnimator.SetBool("IsHeld", false);
 
@@ -60,16 +59,40 @@ public class BoxDraggable : MonoBehaviour
         {
             if (pitHit.acceptedBoxType == boxType)
             {
+                // Correct pit
+                if (isTimeSoul)
+                {
+                    Debug.Log("Time soul sorted correctly — reward!");
+                    GameManager.Instance.ModifyTime(
+                        -GameManager.Instance.currentLevel.timeSoulRewardSeconds
+                    );
+                    if (TimeSoulSpawner.Instance != null)
+                        TimeSoulSpawner.Instance.TimeSoulResolved(gameObject);
+                    BoxSpawner.Instance.BoxSorted();
+                    return;
+                }
                 GameManager.Instance.CorrectPit(gameObject);
             }
             else
             {
+                // Wrong pit
                 GameManager.Instance.WrongPit();
                 BoxSpawner.Instance.BoxSorted();
+
+                if (isTimeSoul)
+                {
+                    // Wrong pit on time soul still triggers time punishment
+                    GameManager.Instance.ModifyTime(
+                        GameManager.Instance.currentLevel.timeSoulPenaltySeconds
+                    );
+                    if (TimeSoulSpawner.Instance != null)
+                        TimeSoulSpawner.Instance.TimeSoulResolved(gameObject);
+                    return;
+                }
+
                 BoxPool.Instance.ReturnBox(gameObject);
             }
         }
-        // No pit hit — coroutine resumes from current position toward gate
     }
 
     PitTarget GetOverlappingPit()
