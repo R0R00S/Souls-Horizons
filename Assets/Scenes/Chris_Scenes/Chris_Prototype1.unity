@@ -3061,7 +3061,7 @@ MonoBehaviour:
       Data2: 1139287376
       Data3: -1505650775
       Data4: 357763838
-    Path: event:/LoseLife
+    Path: event:/SoulDissapear
   pickupSoulSfx:
     Guid:
       Data1: -1915604542
@@ -3076,6 +3076,20 @@ MonoBehaviour:
       Data3: 1572491431
       Data4: 1236324235
     Path: event:/Drop
+  buttonClickSfx:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  soulDisappearSfx:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &1680978672
 Transform:
   m_ObjectHideFlags: 0

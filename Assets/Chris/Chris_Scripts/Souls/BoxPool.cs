@@ -5,7 +5,7 @@ public class BoxPool : MonoBehaviour
 {
     public static BoxPool Instance;
 
-    [Header("One prefab per box type — assign in Inspector")]
+    [Header("One prefab per box type â€” assign in Inspector")]
     public GameObject[] boxPrefabs; // slot 0 = None, 1 = TypeA, 2 = TypeB etc.
     public int poolSizePerType = 5;
 
@@ -37,7 +37,7 @@ public class BoxPool : MonoBehaviour
     {
         if (!pools.ContainsKey(type) || pools[type].Count == 0)
         {
-            
+            Debug.LogWarning("Pool empty for type: " + type);
             return null;
         }
 
@@ -49,6 +49,8 @@ public class BoxPool : MonoBehaviour
 
     public void ReturnBox(GameObject box)
     {
+        AudioManager.Instance.PlaySoulDisappear();
+
         BoxType type = box.GetComponent<BoxDraggable>().boxType;
         box.SetActive(false);
 

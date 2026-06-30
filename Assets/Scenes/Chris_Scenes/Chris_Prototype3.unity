@@ -5332,7 +5332,7 @@ MonoBehaviour:
       Data2: 1139287376
       Data3: -1505650775
       Data4: 357763838
-    Path: event:/LoseLife
+    Path: event:/SoulDissapear
   pickupSoulSfx:
     Guid:
       Data1: -1915604542
@@ -5347,6 +5347,20 @@ MonoBehaviour:
       Data3: 1572491431
       Data4: 1236324235
     Path: event:/Drop
+  buttonClickSfx:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  soulDisappearSfx:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &1680978672
 Transform:
   m_ObjectHideFlags: 0
@@ -6983,12 +6997,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5099258954242699604, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1884363701}
-    - targetCorrespondingSourceObject: {fileID: 920693566007325354, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1537726934}
     - targetCorrespondingSourceObject: {fileID: 3180189787287568823, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1267046352}
+    - targetCorrespondingSourceObject: {fileID: 920693566007325354, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1537726934}
   m_SourcePrefab: {fileID: 100100000, guid: 97fb1d6005f615e4aa784bffc26417f5, type: 3}
 --- !u!224 &7899581721777145784 stripped
 RectTransform:

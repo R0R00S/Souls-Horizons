@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] EventReference loseLifeSfx;
     [SerializeField] EventReference pickupSoulSfx;
     [SerializeField] EventReference dropSoulSfx;
+    [SerializeField] EventReference buttonClickSfx;
+    [SerializeField] EventReference soulDisappearSfx;
 
     void Awake()
     {
@@ -22,19 +24,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayLoseLife()
-    {
-        // Debug.Log("PlayLoseLife called");
-        PlayOneShot(loseLifeSfx);
-    }
-
-    public void PlayPickupSoul()
-    {
-        //Debug.Log("PlayPickupSoul called, event null? " + pickupSoulSfx.IsNull);
-        PlayOneShot(pickupSoulSfx);
-    }
-
-    public void PlayDropSoul()    => PlayOneShot(dropSoulSfx);
+    public void PlayLoseLife()       => PlayOneShot(loseLifeSfx);
+    public void PlayPickupSoul()     => PlayOneShot(pickupSoulSfx);
+    public void PlayDropSoul()       => PlayOneShot(dropSoulSfx);
+    public void PlayButtonClick()    => PlayOneShot(buttonClickSfx);
+    public void PlaySoulDisappear()  => PlayOneShot(soulDisappearSfx);
 
     void PlayOneShot(EventReference sfxEvent)
     {

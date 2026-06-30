@@ -755,9 +755,9 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/FMOD Fucking
+  sourceProjectPath: ../../Souls Horizons Audio/FMOD Fucking around/FMOD Fucking
     around.fspro
-  sourceBankPath: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build
+  sourceBankPath: ../../Souls Horizons Audio/FMOD Fucking around/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

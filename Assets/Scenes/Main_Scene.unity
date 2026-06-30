@@ -6307,11 +6307,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   loseLifeSfx:
     Guid:
-      Data1: -1623420154
-      Data2: 1139287376
-      Data3: -1505650775
-      Data4: 357763838
-    Path: event:/LoseLife
+      Data1: 1588278490
+      Data2: 1147855101
+      Data3: -433473651
+      Data4: -990790927
+    Path: event:/Snarl
   pickupSoulSfx:
     Guid:
       Data1: -1915604542
@@ -6326,6 +6326,20 @@ MonoBehaviour:
       Data3: 1572491431
       Data4: 1236324235
     Path: event:/Drop
+  buttonClickSfx:
+    Guid:
+      Data1: -889721412
+      Data2: 1206166530
+      Data3: 378329248
+      Data4: -939081349
+    Path: event:/Buttons
+  soulDisappearSfx:
+    Guid:
+      Data1: -1623420154
+      Data2: 1139287376
+      Data3: -1505650775
+      Data4: 357763838
+    Path: event:/SoulDissapear
 --- !u!4 &1680978672
 Transform:
   m_ObjectHideFlags: 0

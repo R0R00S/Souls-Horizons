@@ -76,6 +76,8 @@ public class UIManager : MonoBehaviour
 
     public void OnPausePressed()
     {
+        AudioManager.Instance.PlayButtonClick();
+
         isPaused = !isPaused;
 
         if (isPaused)
@@ -97,30 +99,35 @@ public class UIManager : MonoBehaviour
     // Hook to Resume button on pause panel
     public void OnResumePressed()
     {
-        OnPausePressed(); // toggles back off
+        OnPausePressed(); // toggles back off (already plays the click sound)
     }
 
     // Hook to Level Select button on pause panel
     public void OnPauseLevelSelectPressed()
     {
+        AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToLevelSelect();
     }
 
     // Hook to Main Menu button on pause panel
     public void OnPauseMainMenuPressed()
     {
+        AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToMainMenu();
     }
 
     // Replace the old OnRetryPressed
     public void OnRetryPressed()
     {
+        AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.ReloadCurrentLevel();
     }
 
     // New — hook to Next Level button on win screen
     public void OnNextLevelPressed()
     {
+        AudioManager.Instance.PlayButtonClick();
+
         LevelData next = GetNextLevel();
         if (next != null)
             SceneLoader.Instance.LoadLevel(next);
@@ -131,12 +138,14 @@ public class UIManager : MonoBehaviour
     // Hook to Level Select button on win/lose screens
     public void OnLevelSelectPressed()
     {
+        AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToLevelSelect();
     }
 
     // Hook to Main Menu button on lose screen
     public void OnMainMenuPressed()
     {
+        AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToMainMenu();
     }
 
