@@ -74,6 +74,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-7950455534272823134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639180681718202365
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
 --- !u!114 &-7917131797487247187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +113,7 @@ MonoBehaviour:
     Data3: 1411601831
     Data4: -1876609544
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -120,7 +140,7 @@ MonoBehaviour:
     Data3: 2075147421
     Data4: 735607615
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -148,7 +168,7 @@ MonoBehaviour:
     Data3: -1262759012
     Data4: -445281037
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -203,7 +223,7 @@ MonoBehaviour:
     Data3: 378329248
     Data4: -939081349
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -258,7 +278,7 @@ MonoBehaviour:
     Data3: 1961571729
     Data4: 1254682721
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -387,7 +407,7 @@ MonoBehaviour:
     Data3: -1505650775
     Data4: 357763838
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -395,6 +415,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4886
+--- !u!114 &-1510744618988319499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639184278304662804
+  FileSizes:
+  - Name: Desktop
+    Value: 1288
+  Exists: 1
 --- !u!114 &-58471655292545256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,9 +468,9 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
-  - {fileID: 8088118520599810534}
-  - {fileID: 5496436038586203639}
-  - {fileID: 8177385402055824317}
+  - {fileID: -1510744618988319499}
+  - {fileID: 4694633416085969267}
+  - {fileID: -7950455534272823134}
   EditorEvents:
   - {fileID: 1190854981589388901}
   - {fileID: -7674012874167258495}
@@ -444,11 +484,11 @@ MonoBehaviour:
   - {fileID: -7917131797487247187}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8177385402055824317}
+  - {fileID: -7950455534272823134}
   StringsBanks:
-  - {fileID: 8088118520599810534}
+  - {fileID: -1510744618988319499}
   cacheVersion: 131860
-  cacheTime: 639184270658536614
+  cacheTime: 639184278304662804
   SerializableEventsDict:
   - key: event:/Southern Gothic
     index: 0
@@ -516,7 +556,7 @@ MonoBehaviour:
     Data3: -278834273
     Data4: -906264871
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -600,7 +640,7 @@ MonoBehaviour:
     Data3: -433473651
     Data4: -990790927
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -654,7 +694,7 @@ MonoBehaviour:
     Data3: -219360631
     Data4: 1031894485
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -682,7 +722,7 @@ MonoBehaviour:
     Data3: 1572491431
     Data4: 1236324235
   Banks:
-  - {fileID: 5496436038586203639}
+  - {fileID: 4694633416085969267}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -690,6 +730,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 166
+--- !u!114 &4694633416085969267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Game.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Game.bank
+  Name: Game
+  StudioPath: bank:/Game
+  lastModified: 639184278304647740
+  FileSizes:
+  - Name: Desktop
+    Value: 10357952
+  Exists: 1
 --- !u!114 &5423063354503039130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,26 +776,6 @@ MonoBehaviour:
   - Value A
   - Value B
   - Value C
-  Exists: 1
---- !u!114 &5496436038586203639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Game.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: ../../Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Game.bank
-  Name: Game
-  StudioPath: bank:/Game
-  lastModified: 639184270658461351
-  FileSizes:
-  - Name: Desktop
-    Value: 10357952
   Exists: 1
 --- !u!114 &5834850177087603436
 MonoBehaviour:
@@ -790,46 +830,6 @@ MonoBehaviour:
   - Value A
   - Value B
   - Value C
-  Exists: 1
---- !u!114 &8088118520599810534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: ../../Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 639184270658536614
-  FileSizes:
-  - Name: Desktop
-    Value: 1288
-  Exists: 1
---- !u!114 &8177385402055824317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: ../../Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 639184270658526543
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
   Exists: 1
 --- !u!114 &8866266883020926740
 MonoBehaviour:
