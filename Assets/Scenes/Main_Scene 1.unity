@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 1524.7
-  m_AmbientSkyColor: {r: 0.00064540864, g: 0.0004759974, b: 0.0009765625, a: 1}
+  m_AmbientSkyColor: {r: 0.65882355, g: 0.52156866, b: 0.77254903, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 341c43a3526f8e745b9d3560f089b8be, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 63a605548dbd00e46a2a5ae8145e2a42, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: e9c63825af003f146b0f446d594e5060, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -2472,6 +2472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arch
       objectReference: {fileID: 0}
+    - target: {fileID: 4833004834155834880, guid: f0738026982d0924f9ddde63348d9492, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c557e659e738e34885496815e334979, type: 2}
     - target: {fileID: 5886306009332867332, guid: f0738026982d0924f9ddde63348d9492, type: 3}
       propertyPath: m_Intensity
       value: 151.4
@@ -5529,7 +5533,7 @@ PrefabInstance:
     - target: {fileID: 4833004834155834880, guid: f0738026982d0924f9ddde63348d9492, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 90521162cc9cb544294f7aee3d2f3c8e, type: 2}
+      objectReference: {fileID: 2100000, guid: 44b4bc07765b2034a91837dc7b1b75b4, type: 2}
     - target: {fileID: 5886306009332867332, guid: f0738026982d0924f9ddde63348d9492, type: 3}
       propertyPath: m_Color.b
       value: 0.9960785
@@ -9083,6 +9087,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6263813578122355630, guid: a88b9c481f5972b44b0b748c582ad2a4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c448e7a8b6b1d9a44a1d237ba30c74c3, type: 2}
     - target: {fileID: 7464487935410972242, guid: a88b9c481f5972b44b0b748c582ad2a4, type: 3}
       propertyPath: m_Name
       value: YellowGround
@@ -9158,6 +9166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueGround
       objectReference: {fileID: 0}
+    - target: {fileID: 3686636001355593375, guid: 45874cba2dca0194abc37306a36d0b44, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 75dfba6a32c376443881bd5a9020055d, type: 2}
     - target: {fileID: 7283242830815419545, guid: 45874cba2dca0194abc37306a36d0b44, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.544403
@@ -9291,6 +9303,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6380356599732617496, guid: 3498079db6f2aed40a219a32c29e94a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f75964383d008ff4885f8dc77600191d, type: 2}
     - target: {fileID: 7633933404940895460, guid: 3498079db6f2aed40a219a32c29e94a5, type: 3}
       propertyPath: m_Name
       value: RedGround
@@ -10220,6 +10236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3972042079743579040, guid: 22fd7ebadeeef464798e4cd22abbc575, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 45fba3354cce8e64fbfaedd749aab476, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
