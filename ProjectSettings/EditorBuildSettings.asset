@@ -26,15 +26,21 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Chris_Scenes/Chris_Prototype1.unity
     guid: 82959b1afbb0cec48a04566e1c99cb0c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chris_Scenes/Chris_Prototype2.unity
     guid: 2701e1058859a974da2f1fd3ce9061fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chris_Scenes/Chris_Prototype3.unity
     guid: fde023d01002bf843909180517a33679
   - enabled: 1
     path: Assets/Scenes/Main_Scene.unity
     guid: f0778c93e325c724d989b45fbb7ee14d
+  - enabled: 1
+    path: Assets/Scenes/Main_Scene 2.unity
+    guid: 372b0a8ca0dba7240b1e294da5a40726
+  - enabled: 1
+    path: Assets/Scenes/Main_Scene 1.unity
+    guid: 03a0bd1320f83a546a9daf5feee8e510
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

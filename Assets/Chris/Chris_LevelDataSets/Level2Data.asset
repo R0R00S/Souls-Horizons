@@ -12,22 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4256901e2d2a45748984f0306bad14b3, type: 3}
   m_Name: level2Data
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneName: Chris_Prototype2
-  levelDuration: 60
-  beltSpeed: 2
-  minSpawnInterval: 1.5
-  maxSpawnInterval: 4
-  maxSimultaneousBoxes: 1
+  sceneName: Main_Scene 1
+  levelDuration: 70
+  beltSpeed: 3
+  minSpawnInterval: 1
+  maxSpawnInterval: 3
+  maxSimultaneousBoxes: 30
   maxBeltSpeed: 4
-  numberOfPits: 2
+  numberOfPits: 4
   noneChance: 20
   typeAChance: 40
   typeBChance: 40
-  typeCChance: 0
-  typeDChance: 0
-  urgencyTimeThreshold: 20
+  typeCChance: 60
+  typeDChance: 20
+  maxTimeCap: 0
+  baseScore: 1000
+  scoreLostPerPenaltySecond: 5
+  scoreLostPerLife: 640000002c010000
+  urgencyTimeThreshold: 1.75
   urgencySpeedMultiplier: 1.5
-  pitSpawnActivationTime: 30
-  pitMinSpawnInterval: 5
-  pitMaxSpawnInterval: 12
+  pitSpawnActivationTime: 5
+  pitMinSpawnInterval: 2
+  pitMaxSpawnInterval: 6
   dialogueData: {fileID: 11400000, guid: 928afca360f3fe94ebcd30cfed95dc4f, type: 2}
+  flamePenaltySeconds: 15
+  timeSoulMinSpawnWindow: 15
+  timeSoulMaxSpawnWindow: 35
+  timeSoulSpeedMultiplier: 2.2
+  timeSoulPenaltySeconds: 20
+  timeSoulRewardSeconds: 10
+  timeSoulCooldownMin: 20
+  timeSoulCooldownMax: 40

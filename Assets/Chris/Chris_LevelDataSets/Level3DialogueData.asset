@@ -15,12 +15,6 @@ MonoBehaviour:
   openingSequence:
     enabled: 1
     lines:
-    - Level 3 YES
-    - GOOD LUCK
-  notifications:
-  - triggerAtTime: 0
-    message: 'quick note
-
-'
-    displayDuration: 0
-    hasTriggered: 0
+    - Wow! You are on a roll!
+    - Lets see if you can keep up with this!
+  notifications: []

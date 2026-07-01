@@ -15,12 +15,6 @@ MonoBehaviour:
   openingSequence:
     enabled: 1
     lines:
-    - this be level 2 type shi
-    - 'more chaos finna happen '
-  notifications:
-  - triggerAtTime: 0
-    message: 'quick note
-
-'
-    displayDuration: 0
-    hasTriggered: 0
+    - Welcome back! Now its gonna become a bit harder.
+    - Good luck!
+  notifications: []
