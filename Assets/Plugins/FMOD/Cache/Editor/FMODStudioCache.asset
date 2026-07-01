@@ -274,7 +274,7 @@ MonoBehaviour:
   Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Game.bank
   Name: Game
   StudioPath: bank:/Game
-  lastModified: 639184270658461351
+  lastModified: 639184720638983487
   FileSizes:
   - Name: Desktop
     Value: 10357952
@@ -377,7 +377,7 @@ MonoBehaviour:
   Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639184270658526543
+  lastModified: 639184720638993683
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -397,7 +397,7 @@ MonoBehaviour:
   Path: Assets/Robin/Souls Horizons Audio/FMOD Fucking around/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639184270658536614
+  lastModified: 639184720639004632
   FileSizes:
   - Name: Desktop
     Value: 1288
@@ -713,7 +713,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -4289546295008053083}
   cacheVersion: 131860
-  cacheTime: 639184270658536614
+  cacheTime: 639184720639004632
   SerializableEventsDict:
   - key: event:/SoulDissapear
     index: 0
