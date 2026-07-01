@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Don't start gameplay yet — wait for opening dialogue to finish
+        // Don't start gameplay yet ï¿½ wait for opening dialogue to finish
         isGameActive = false;
 
         LevelDialogueData dialogueData = currentLevel.dialogueData;
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         lives--;
         livesLost++;
         UIManager.Instance.UpdateLives(lives);
-        
+        CameraShake.Instance.Shake(); // fires for every life loss, every cause
 
         if (lives <= 0)
             GameOver();
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     void OnOpeningDialogueComplete()
     {
-        // Dialogue finished — now actually start the level
+        // Dialogue finished ï¿½ now actually start the level
         Time.timeScale = 1;
         isGameActive = true;
 
@@ -165,7 +165,7 @@ public class GameManager : MonoBehaviour
     {
         timeRemaining += seconds;
 
-        // Track penalty seconds for scoring — only count positive additions
+        // Track penalty seconds for scoring ï¿½ only count positive additions
         if (seconds > 0)
             totalPenaltySeconds += seconds;
 
@@ -195,7 +195,7 @@ public class GameManager : MonoBehaviour
                               * currentLevel.scoreLostPerPenaltySecond;
         score -= penaltyFromTime;
 
-        // Deduct per life lost using the array — index 0 = first life, index 1 = second life
+        // Deduct per life lost using the array ï¿½ index 0 = first life, index 1 = second life
         int[] lifePenalties = currentLevel.scoreLostPerLife;
         for (int i = 0; i < livesLost && i < lifePenalties.Length; i++)
         {

@@ -8,7 +8,7 @@ public class GateTarget : MonoBehaviour
         if (box == null) return;
         if (box.isBeingHeld) return;
 
-        // Time soul reached the gate — time punishment
+        // Time soul reached the gate ï¿½ time punishment
         if (box.isTimeSoul)
         {
             GameManager.Instance.WrongPit();
