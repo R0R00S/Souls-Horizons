@@ -20,7 +20,7 @@ MonoBehaviour:
 '
     - Dont forget to let the pure souls pass though.
   notifications:
-  - triggerAtTime: 50
-    message: 'pop up after 30 seconds or at 30 '
-    displayDuration: 0
+  - triggerAtTimeRemaining: 40
+    message: "Souls are escaping from the pits!\n "
+    displayDuration: 2
     hasTriggered: 1

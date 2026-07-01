@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4256901e2d2a45748984f0306bad14b3, type: 3}
-  m_Name: level1Data
+  m_Name: Level1Data
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  sceneName: Main_Scene
+  sceneName: Main_Scene1
   levelDuration: 60
   beltSpeed: 1.5
   minSpawnInterval: 1
@@ -29,13 +29,14 @@ MonoBehaviour:
   baseScore: 1000
   scoreLostPerPenaltySecond: 5
   scoreLostPerLife: 640000002c010000
-  urgencyTimeThreshold: 5
+  urgencyTimeThreshold: 30
   urgencySpeedMultiplier: 1.2
-  pitSpawnActivationTime: 15
+  pitSpawnActivationTimeRemaining: 40
   pitMinSpawnInterval: 3
   pitMaxSpawnInterval: 6
   dialogueData: {fileID: 11400000, guid: 1fccca30a024cc64889cab24939ae9bf, type: 2}
   flamePenaltySeconds: 10
+  enableTimeSoul: 0
   timeSoulMinSpawnWindow: 15
   timeSoulMaxSpawnWindow: 35
   timeSoulSpeedMultiplier: 3

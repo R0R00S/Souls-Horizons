@@ -5,8 +5,8 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    public const string MAIN_MENU = "Chris_StartScreen";
-    public const string LEVEL_SELECT = "Chris_LevelSelect";
+    public const string MAIN_MENU = "StartScreen";
+    public const string LEVEL_SELECT = "LevelSelect";
 
     [Header("Level Order — same order as Level Select buttons")]
     public LevelData[] levelOrder;

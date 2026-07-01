@@ -25,12 +25,11 @@ public class TimeSoulSpawner : MonoBehaviour
     void Update()
     {
         if (!GameManager.Instance.isGameActive || isStopped) return;
+        if (!GameManager.Instance.currentLevel.enableTimeSoul) return; // add this
         if (timeSoulCurrentlyActive) return;
 
         if (GameManager.Instance.timeElapsed >= nextSpawnAtElapsed)
-        {
             SpawnTimeSoul();
-        }
     }
 
     void ScheduleNextSpawn(bool isFirstSpawn)

@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
             ps.StopSpawning();
         UIManager.Instance.ShowGameOverScreen();
+        if (TimeSoulSpawner.Instance != null)
+            TimeSoulSpawner.Instance.StopSpawning();
     }
 
     void LevelWin()
@@ -110,6 +112,8 @@ public class GameManager : MonoBehaviour
             ps.StopSpawning();
         int finalScore = CalculateFinalScore();
         UIManager.Instance.ShowWinScreen(finalScore);
+        if (TimeSoulSpawner.Instance != null)
+            TimeSoulSpawner.Instance.StopSpawning();
     }
 
     public void Retry()

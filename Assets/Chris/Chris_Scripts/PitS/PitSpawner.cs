@@ -4,7 +4,7 @@ using System.Collections;
 public class PitSpawner : MonoBehaviour
 {
     [Header("Spawn Settings")]
-    [Tooltip("Overrides LevelData activation time for this specific pit. Set to -1 to use LevelData value.")]
+    [Tooltip("Overrides LevelData activation — triggers when timer reaches this many seconds remaining. Set to -1 to use LevelData value.")]
     public float activationTimeOverride = -1f;
 
     [Tooltip("Overrides LevelData min interval for this pit. Set to -1 to use LevelData value.")]
@@ -37,19 +37,19 @@ public class PitSpawner : MonoBehaviour
     {
         if (!GameManager.Instance.isGameActive || isStopped) return;
 
-        // Check activation time
         if (!isActive)
         {
             float activationTime = activationTimeOverride >= 0f
                 ? activationTimeOverride
-                : GameManager.Instance.currentLevel.pitSpawnActivationTime;
+                : GameManager.Instance.currentLevel.pitSpawnActivationTimeRemaining;
 
-            if (GameManager.Instance.timeElapsed >= activationTime)
+            // Changed from timeElapsed >= to timeRemaining <=
+            if (GameManager.Instance.timeRemaining <= activationTime)
             {
                 isActive = true;
-                
+                Debug.Log(gameObject.name + " pit spawner activated");
             }
-            return; // not active yet, don't count down spawn timer
+            return;
         }
 
         spawnTimer -= Time.deltaTime;

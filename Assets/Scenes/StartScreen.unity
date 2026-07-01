@@ -1335,6 +1335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arch
       objectReference: {fileID: 0}
+    - target: {fileID: 4833004834155834880, guid: f0738026982d0924f9ddde63348d9492, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 44b4bc07765b2034a91837dc7b1b75b4, type: 2}
     - target: {fileID: 5886306009332867332, guid: f0738026982d0924f9ddde63348d9492, type: 3}
       propertyPath: m_Intensity
       value: 151.4
@@ -4484,7 +4488,7 @@ PrefabInstance:
       objectReference: {fileID: 1500997447}
     - target: {fileID: 1481778501833909994, guid: 5b787de0d4a23084db61889ec2b813a4, type: 3}
       propertyPath: m_VersionIndex
-      value: 4234
+      value: 4240
       objectReference: {fileID: 0}
     - target: {fileID: 3762907419623841812, guid: 5b787de0d4a23084db61889ec2b813a4, type: 3}
       propertyPath: m_Name
@@ -5260,7 +5264,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68092a44174d92b4b90e47bbacae6d33, type: 2}
+  - {fileID: 2100000, guid: e18180f7b0230c64eaa9955e85d319ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -177,8 +177,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.4047045, z: 1}
+  m_Center: {x: 0, y: 0.10612601, z: 0}
 --- !u!114 &253029228680956207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoxDraggable
   boxType: 2
+  isTimeSoul: 0
   visualAnimator: {fileID: 265592185206206344}
   isBeingHeld: 0
 --- !u!54 &5540721154426003367

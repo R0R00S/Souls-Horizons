@@ -48,7 +48,8 @@ public class LevelData : ScriptableObject
 
 
     [Header("Pit Spawner Settings")]
-    public float pitSpawnActivationTime = 30f;  // seconds into the level before pit spawning begins
+    [Tooltip("Pit spawning activates when the timer reaches this many seconds remaining")]
+    public float pitSpawnActivationTimeRemaining = 30f;
     public float pitMinSpawnInterval = 5f;       // slower than the belt by default
     public float pitMaxSpawnInterval = 12f;
 
@@ -60,6 +61,7 @@ public class LevelData : ScriptableObject
     public float flamePenaltySeconds = 10f;
 
     [Header("Time Soul Settings")]
+    public bool enableTimeSoul = true;
     [Tooltip("Minimum seconds elapsed before first time soul can spawn")]
     public float timeSoulMinSpawnWindow = 15f;
     [Tooltip("Maximum seconds elapsed before first time soul must spawn")]
@@ -84,8 +86,8 @@ public class LevelData : ScriptableObject
             
         }
 
-        if (pitSpawnActivationTime >= levelDuration)
-            Debug.LogWarning(name + ": pitSpawnActivationTime is after level ends — pits will never spawn.");
+        if (pitSpawnActivationTimeRemaining >= levelDuration)
+            Debug.LogWarning(name + ": pitSpawnActivationTimeRemaining is after level ends — pits will never spawn.");
     }
 
 }

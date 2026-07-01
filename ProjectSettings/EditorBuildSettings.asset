@@ -6,40 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Chris_Scenes/Chris_StartScreen.unity
+    path: Assets/Scenes/StartScreen.unity
     guid: 123b254b975994045b476277eb77570a
   - enabled: 1
-    path: Assets/Scenes/Chris_Scenes/Chris_LevelSelect.unity
+    path: Assets/Scenes/LevelSelect.unity
     guid: 06a43f361b3f706419623e73e3165f7d
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_GameloopTest/Chris_Level1.unity
-    guid: 1ad2082cf51f000458aabb97aa7af98e
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_GameloopTest/Chris_Level2.unity
-    guid: 2b6c5cf4a60c2a7408e97dde9488cca2
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_GameloopTest/Chris_Level3.unity
-    guid: 72d68e475a0f2c5468ed66be1263cee1
-  - enabled: 0
-    path: Assets/Scenes/Robin_Prototype.unity
-    guid: 48460edec0276e844ba255d9dd8e66e7
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_Prototype1.unity
-    guid: 82959b1afbb0cec48a04566e1c99cb0c
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_Prototype2.unity
-    guid: 2701e1058859a974da2f1fd3ce9061fb
-  - enabled: 0
-    path: Assets/Scenes/Chris_Scenes/Chris_Prototype3.unity
-    guid: fde023d01002bf843909180517a33679
   - enabled: 1
-    path: Assets/Scenes/Main_Scene.unity
+    path: Assets/Scenes/Main_Scene1.unity
     guid: f0778c93e325c724d989b45fbb7ee14d
   - enabled: 1
-    path: Assets/Scenes/Main_Scene 2.unity
+    path: Assets/Scenes/Main_Scene3.unity
     guid: 372b0a8ca0dba7240b1e294da5a40726
   - enabled: 1
-    path: Assets/Scenes/Main_Scene 1.unity
+    path: Assets/Scenes/Main_Scene2.unity
     guid: 03a0bd1320f83a546a9daf5feee8e510
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
