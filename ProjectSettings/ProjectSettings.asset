@@ -937,11 +937,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 0185ab53-d322-4d4c-a344-7de65757854c
+  cloudProjectId: a599e474-c7ad-4d23-a8bc-250535274431
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Souls-Horizons Game (1)
-  organizationId: roosendaalannerobin
+  projectName: Souls-Horizons Game
+  organizationId: chrisduijmpie
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
