@@ -18,6 +18,13 @@ public class LevelData : ScriptableObject
     [Header("Pit Settings")]
     public int numberOfPits = 2;
 
+    [Header("Pit Spawner Settings")]
+    [Tooltip("Pit spawning activates when the timer reaches this many seconds remaining")]
+    public float pitSpawnActivationTimeRemaining = 30f;
+    public float pitMinSpawnInterval = 5f;       // slower than the belt by default
+    public float pitMaxSpawnInterval = 12f;
+    
+    
     [Header("Spawn Weights — higher = more frequent")]
     [Range(0, 100)] public int noneChance = 20; // safe boxes that should enter the gate
     [Range(0, 100)] public int typeAChance = 40;
@@ -47,11 +54,6 @@ public class LevelData : ScriptableObject
 
 
 
-    [Header("Pit Spawner Settings")]
-    [Tooltip("Pit spawning activates when the timer reaches this many seconds remaining")]
-    public float pitSpawnActivationTimeRemaining = 30f;
-    public float pitMinSpawnInterval = 5f;       // slower than the belt by default
-    public float pitMaxSpawnInterval = 12f;
 
     [Header("Dialogue")]
     public LevelDialogueData dialogueData; // optional — leave empty for no dialogue

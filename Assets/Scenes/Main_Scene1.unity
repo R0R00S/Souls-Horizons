@@ -3153,7 +3153,7 @@ PrefabInstance:
     - target: {fileID: 4833004834155834880, guid: f0738026982d0924f9ddde63348d9492, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5c557e659e738e34885496815e334979, type: 2}
+      objectReference: {fileID: 2100000, guid: 44b4bc07765b2034a91837dc7b1b75b4, type: 2}
     - target: {fileID: 5886306009332867332, guid: f0738026982d0924f9ddde63348d9492, type: 3}
       propertyPath: m_Intensity
       value: 151.4
@@ -10772,7 +10772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: boundsMinZ
-      value: -19.7
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 7381149417809757590, guid: 431938b8a78fee0498d79eb46b61b3be, type: 3}
       propertyPath: dragHeight

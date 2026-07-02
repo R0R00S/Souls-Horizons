@@ -20,6 +20,9 @@ MonoBehaviour:
   maxSimultaneousBoxes: 30
   maxBeltSpeed: 4
   numberOfPits: 4
+  pitSpawnActivationTimeRemaining: 50
+  pitMinSpawnInterval: 2
+  pitMaxSpawnInterval: 6
   noneChance: 20
   typeAChance: 40
   typeBChance: 40
@@ -31,9 +34,6 @@ MonoBehaviour:
   scoreLostPerLife: 640000002c010000
   urgencyTimeThreshold: 30
   urgencySpeedMultiplier: 1.3
-  pitSpawnActivationTimeRemaining: 50
-  pitMinSpawnInterval: 2
-  pitMaxSpawnInterval: 6
   dialogueData: {fileID: 11400000, guid: 928afca360f3fe94ebcd30cfed95dc4f, type: 2}
   flamePenaltySeconds: 10
   enableTimeSoul: 1
