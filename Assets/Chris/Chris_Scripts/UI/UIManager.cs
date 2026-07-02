@@ -10,25 +10,25 @@ public class UIManager : MonoBehaviour
     [Header("HUD")]
     public TextMeshProUGUI timerText;
     public Image[] lifeIcons;
-    public GameObject hudCanvas; // drag your HUD Canvas here in Inspector
+    public GameObject hudCanvas;
 
     [Header("Screens")]
     public GameObject gameOverScreen;
     public GameObject winScreen;
 
     [Header("Win Screen")]
-    public TextMeshProUGUI winScoreText; // drag in Inspector
+    public TextMeshProUGUI winScoreText;
 
     private Camera cam;
 
     [Header("Pause")]
     public GameObject pausePanel;
-    public GameObject pauseButton; // the in-game pause button on the HUD
+    public GameObject pauseButton;
 
     private bool isPaused = false;
 
     [Header("Time Modifier Notification")]
-    public TextMeshProUGUI timeModifierText;  // small text sitting below the timer
+    public TextMeshProUGUI timeModifierText;
     public float timeModifierDisplayDuration = 1.2f;
 
     private Coroutine timeModifierCoroutine;
@@ -44,14 +44,21 @@ public class UIManager : MonoBehaviour
         if (gameOverScreen != null) gameOverScreen.SetActive(false);
         if (winScreen != null) winScreen.SetActive(false);
         if (pausePanel != null) pausePanel.SetActive(false);
+
+        // Disable pause button until opening dialogue finishes
+        if (pauseButton != null) pauseButton.SetActive(false);
+    }
+
+    // Called by GameManager.OnOpeningDialogueComplete()
+    public void EnablePauseButton()
+    {
+        if (pauseButton != null) pauseButton.SetActive(true);
     }
 
     public void UpdateTimer(string time)
     {
         if (timerText == null) return;
         timerText.text = time;
-
-        // Flash red in last 10 seconds
         timerText.color = int.Parse(time) <= 10 ? Color.red : Color.white;
     }
 
@@ -96,34 +103,29 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Hook to Resume button on pause panel
     public void OnResumePressed()
     {
-        OnPausePressed(); // toggles back off (already plays the click sound)
+        OnPausePressed();
     }
 
-    // Hook to Level Select button on pause panel
     public void OnPauseLevelSelectPressed()
     {
         AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToLevelSelect();
     }
 
-    // Hook to Main Menu button on pause panel
     public void OnPauseMainMenuPressed()
     {
         AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToMainMenu();
     }
 
-    // Replace the old OnRetryPressed
     public void OnRetryPressed()
     {
         AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.ReloadCurrentLevel();
     }
 
-    // New — hook to Next Level button on win screen
     public void OnNextLevelPressed()
     {
         AudioManager.Instance.PlayButtonClick();
@@ -132,17 +134,15 @@ public class UIManager : MonoBehaviour
         if (next != null)
             SceneLoader.Instance.LoadLevel(next);
         else
-            SceneLoader.Instance.GoToLevelSelect(); // no next level, go back to select
+            SceneLoader.Instance.GoToLevelSelect();
     }
 
-    // Hook to Level Select button on win/lose screens
     public void OnLevelSelectPressed()
     {
         AudioManager.Instance.PlayButtonClick();
         SceneLoader.Instance.GoToLevelSelect();
     }
 
-    // Hook to Main Menu button on lose screen
     public void OnMainMenuPressed()
     {
         AudioManager.Instance.PlayButtonClick();
@@ -151,10 +151,7 @@ public class UIManager : MonoBehaviour
 
     LevelData GetNextLevel()
     {
-        // SceneLoader knows which level was loaded — ask it for the next one
         LevelSelectUI levelSelect = FindObjectOfType<LevelSelectUI>();
-
-        // Since LevelSelectUI is in a different scene, store level order on SceneLoader instead
         return SceneLoader.Instance.GetNextLevel();
     }
 
@@ -162,7 +159,6 @@ public class UIManager : MonoBehaviour
     {
         if (timeModifierText == null) return;
 
-        // Cancel any currently showing notification before starting a new one
         if (timeModifierCoroutine != null)
             StopCoroutine(timeModifierCoroutine);
 
@@ -173,8 +169,6 @@ public class UIManager : MonoBehaviour
     {
         timeModifierText.text = text;
         timeModifierText.gameObject.SetActive(true);
-
-        // Optional: color code — red for punishment, green for reward
         timeModifierText.color = text.StartsWith("+") ? Color.red : Color.green;
 
         yield return new WaitForSecondsRealtime(timeModifierDisplayDuration);

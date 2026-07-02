@@ -14,21 +14,18 @@ public class GameManager : MonoBehaviour
 
     private int lastDisplayedSecond = -1;
 
-    private float totalPenaltySeconds = 0f; // accumulates every time ModifyTime is called
-    private int livesLost = 0;              // increments in WrongPit
+    private float totalPenaltySeconds = 0f;
+    private int livesLost = 0;
 
     void Awake()
     {
         Instance = this;
-
 
         if (SceneLoader.Instance != null && SceneLoader.Instance.selectedLevel != null)
         {
             currentLevel = SceneLoader.Instance.selectedLevel;
         }
 
-        // currentLevel might already be assigned in the Inspector as a fallback
-        // for when you start directly from this scene in the Editor
         if (currentLevel == null)
         {
             Debug.LogError("No LevelData assigned anywhere. Assign one in the Inspector.");
@@ -40,13 +37,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Don't start gameplay yet � wait for opening dialogue to finish
         isGameActive = false;
 
         LevelDialogueData dialogueData = currentLevel.dialogueData;
-
         DialogueSequence opening = dialogueData != null ? dialogueData.openingSequence : null;
-
         DialogueManager.Instance.PlayOpeningSequence(opening, OnOpeningDialogueComplete);
     }
 
@@ -57,7 +51,6 @@ public class GameManager : MonoBehaviour
         timeRemaining -= Time.deltaTime;
         timeElapsed += Time.deltaTime;
 
-        // Check mid-level notifications
         CheckNotifications();
 
         int currentSecond = Mathf.CeilToInt(timeRemaining);
@@ -84,20 +77,22 @@ public class GameManager : MonoBehaviour
 
     public void CorrectPit(GameObject box)
     {
-        
         BoxSpawner.Instance.BoxSorted();
         BoxPool.Instance.ReturnBox(box);
     }
+
     void GameOver()
     {
         isGameActive = false;
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
-        
-        TimeSoulSpawner.Instance.StopSpawning(); // add this
+
+        TimeSoulSpawner.Instance.StopSpawning();
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
             ps.StopSpawning();
+
         UIManager.Instance.ShowGameOverScreen();
+
         if (TimeSoulSpawner.Instance != null)
             TimeSoulSpawner.Instance.StopSpawning();
     }
@@ -107,33 +102,40 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         BoxSpawner.Instance.StopSpawning();
-        
-        TimeSoulSpawner.Instance.StopSpawning(); // add this
+
+        TimeSoulSpawner.Instance.StopSpawning();
         foreach (PitSpawner ps in FindObjectsOfType<PitSpawner>())
             ps.StopSpawning();
+
+        // Unlock the next level on win
+        int completedIndex = GetCurrentLevelIndex();
+        if (completedIndex >= 0)
+            ProgressionManager.Instance.UnlockNextLevel(completedIndex);
+
         int finalScore = CalculateFinalScore();
         UIManager.Instance.ShowWinScreen(finalScore);
+
         if (TimeSoulSpawner.Instance != null)
             TimeSoulSpawner.Instance.StopSpawning();
     }
 
-    public void Retry()
+    int GetCurrentLevelIndex()
     {
-        Time.timeScale = 1;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-        );
+        if (SceneLoader.Instance == null || SceneLoader.Instance.levelOrder == null) return -1;
+
+        for (int i = 0; i < SceneLoader.Instance.levelOrder.Length; i++)
+        {
+            if (SceneLoader.Instance.levelOrder[i] == currentLevel)
+                return i;
+        }
+        return -1;
     }
 
     void OnOpeningDialogueComplete()
     {
-        // Dialogue finished � now actually start the level
         Time.timeScale = 1;
         isGameActive = true;
-
-        // Optional: trigger your door opening animation here before setting isGameActive
-        // For now just starts immediately
-        
+        UIManager.Instance.EnablePauseButton();
     }
 
     private int notificationCheckIndex = 0;
@@ -165,49 +167,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Positive value = punishment (adds time), negative value = reward (removes time)
     public void ModifyTime(float seconds)
     {
         timeRemaining += seconds;
 
-        // Track penalty seconds for scoring � only count positive additions
         if (seconds > 0)
             totalPenaltySeconds += seconds;
 
-        // Apply cap only if maxTimeCap is set (non-zero)
         if (currentLevel.maxTimeCap > 0f)
             timeRemaining = Mathf.Min(timeRemaining, currentLevel.maxTimeCap);
 
-        // Force immediate display refresh
         lastDisplayedSecond = -1;
 
         string prefix = seconds > 0 ? "+" : "";
         UIManager.Instance.ShowTimeModifierNotification(prefix + Mathf.RoundToInt(seconds) + "s");
-
-        
     }
-
-    //GameManager.Instance.ModifyTime(-5f); // removes 5 seconds, shows "-5s" in green
-    // For when adding rewards
-
 
     public int CalculateFinalScore()
     {
         int score = currentLevel.baseScore;
 
-        // Deduct for penalty seconds
         int penaltyFromTime = Mathf.RoundToInt(totalPenaltySeconds)
                               * currentLevel.scoreLostPerPenaltySecond;
         score -= penaltyFromTime;
 
-        // Deduct per life lost using the array � index 0 = first life, index 1 = second life
         int[] lifePenalties = currentLevel.scoreLostPerLife;
         for (int i = 0; i < livesLost && i < lifePenalties.Length; i++)
         {
             score -= lifePenalties[i];
         }
 
-        // Don't go below zero
         score = Mathf.Max(0, score);
 
         Debug.Log($"Final score: {score} " +
@@ -215,5 +204,4 @@ public class GameManager : MonoBehaviour
 
         return score;
     }
-
 }

@@ -4402,6 +4402,10 @@ MonoBehaviour:
   level1Data: {fileID: 11400000, guid: fec62c923f397d645ac014eeacef61c5, type: 2}
   level2Data: {fileID: 11400000, guid: a2bd1c326e8e31341a41b8fd40aed2f1, type: 2}
   level3Data: {fileID: 11400000, guid: 8923aa96a64603a42be8c306afd2cf6c, type: 2}
+  level1Button: {fileID: 182798693}
+  level2Button: {fileID: 123376303}
+  level3Button: {fileID: 565638944}
+  buttonSoundDelay: 0.15
 --- !u!4 &1554141329
 Transform:
   m_ObjectHideFlags: 0
