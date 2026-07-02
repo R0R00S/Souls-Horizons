@@ -75,7 +75,8 @@ public class GameManager : MonoBehaviour
         lives--;
         livesLost++;
         UIManager.Instance.UpdateLives(lives);
-        CameraShake.Instance.Shake(); // fires for every life loss, every cause
+        CameraShake.Instance.Shake();
+        ScreenFlash.Instance.Flash();
 
         if (lives <= 0)
             GameOver();
