@@ -16,7 +16,7 @@ MonoBehaviour:
   levelDuration: 70
   beltSpeed: 2.8
   minSpawnInterval: 1
-  maxSpawnInterval: 3
+  maxSpawnInterval: 2.6
   maxSimultaneousBoxes: 30
   maxBeltSpeed: 4
   numberOfPits: 4
@@ -30,7 +30,7 @@ MonoBehaviour:
   scoreLostPerPenaltySecond: 5
   scoreLostPerLife: 640000002c010000
   urgencyTimeThreshold: 30
-  urgencySpeedMultiplier: 1.5
+  urgencySpeedMultiplier: 1.3
   pitSpawnActivationTimeRemaining: 50
   pitMinSpawnInterval: 2
   pitMaxSpawnInterval: 6

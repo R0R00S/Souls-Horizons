@@ -15,7 +15,7 @@ MonoBehaviour:
   sceneName: Main_Scene3
   levelDuration: 80
   beltSpeed: 3.2
-  minSpawnInterval: 0.5
+  minSpawnInterval: 0.8
   maxSpawnInterval: 2
   maxSimultaneousBoxes: 60
   maxBeltSpeed: 4

@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
         if (winScreen != null) winScreen.SetActive(true);
 
         if (winScoreText != null)
-            winScoreText.text = "Score: " + score;
+            winScoreText.text = ": " + score;
     }
 
     public void OnPausePressed()

@@ -17,7 +17,7 @@ MonoBehaviour:
     lines:
     - Wow! You are on a roll!
     - Lets see if you can keep up with this!
-    - The hourglass souls need to be sorted into the green pit today!
+    - <color=green>The hourglass souls need to be sorted into the green pit today!</color>!
     - Good luck with this shift!
   notifications:
   - triggerAtTimeRemaining: 60

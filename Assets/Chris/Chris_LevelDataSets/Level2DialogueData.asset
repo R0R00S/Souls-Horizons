@@ -18,9 +18,9 @@ MonoBehaviour:
     - Welcome back! It will be a bit harder now.
     - You might see some sneaky, quick souls trying to escape judgment!
     - We transformed them into an hourglass shape!
-    - Let's sort them into the yellow pit for today!
+    - <color=yellow>Let's sort them into the yellow pit for today!</color>
   notifications:
   - triggerAtTimeRemaining: 50
     message: The souls are escaping from the pits!
     displayDuration: 2
-    hasTriggered: 0
+    hasTriggered: 1

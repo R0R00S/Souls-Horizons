@@ -15,10 +15,14 @@ MonoBehaviour:
   openingSequence:
     enabled: 1
     lines:
-    - 'Welcome, your job is to sort out souls to the pit they belong to.
+    - 'Welcome newby, your job is to sort out souls to the pit they belong to!
 
 '
+    - 'The Judges have been so kind to colour-code the souls for you, so do not put
+      them into the wrong pit! '
     - Dont forget to let the pure souls pass though.
+    - <color=red>Make Cerberus mad and you are fired.</color>
+    - Good luck with your first shift!
   notifications:
   - triggerAtTimeRemaining: 40
     message: "Souls are escaping from the pits!\n "

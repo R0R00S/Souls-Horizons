@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   sceneName: Main_Scene1
   levelDuration: 60
-  beltSpeed: 1.5
+  beltSpeed: 1.6
   minSpawnInterval: 1
   maxSpawnInterval: 3
   maxSimultaneousBoxes: 20
@@ -29,8 +29,8 @@ MonoBehaviour:
   baseScore: 1000
   scoreLostPerPenaltySecond: 5
   scoreLostPerLife: 640000002c010000
-  urgencyTimeThreshold: 30
-  urgencySpeedMultiplier: 1.2
+  urgencyTimeThreshold: 40
+  urgencySpeedMultiplier: 1.3
   pitSpawnActivationTimeRemaining: 40
   pitMinSpawnInterval: 3
   pitMaxSpawnInterval: 6
